@@ -258,11 +258,28 @@ button { font-family: inherit; }
   pointer-events: none;
 }
 
+/* Grid: the headline, CTA and trust row span the full width; the app
+   window sits in the empty space right of the subtitle row. */
 .hero-content {
   position: relative; z-index: 4;
   max-width: 1240px; width: 100%;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "eyebrow eyebrow"
+    "title   title"
+    "sub     win"
+    "cta     cta"
+    "trust   trust";
+  column-gap: clamp(32px, 4vw, 64px);
+  align-items: start;
 }
+.eyebrow    { grid-area: eyebrow; }
+.hero-title { grid-area: title; }
+.hero-sub   { grid-area: sub; }
+.hero-cta   { grid-area: cta; }
+.hero-trust { grid-area: trust; }
 
 .eyebrow {
   display: inline-flex; align-items: center; gap: 10px;
@@ -326,17 +343,14 @@ button { font-family: inherit; }
 .trust-sep { color: var(--cyan-soft); opacity: 0.7; }
 
 /* Holo desktop app window */
-/* App window sits in the hero flow below the text (flex column child),
-   so it never covers the headline; position: relative keeps
-   .appwin-chip and .holo-halo anchored to it. Hidden below 1080px.
-   translateY(52%) cancels the appwin's own -52% float so the window
-   paints exactly 56px below the text, as it did below the holo box. */
+/* App window sits in the grid cell right of the subtitle (grid-area:
+   win), so it never covers the headline; position: relative keeps
+   .appwin-chip and .holo-halo anchored to it. Hidden below 1080px. */
 .holo {
   position: relative; z-index: 4;
+  grid-area: win;
   width: min(340px, 24vw);
-  margin: 56px auto 0;
   perspective: 900px;
-  transform: translateY(52%);
 }
 .appwin {
   position: relative;
@@ -354,8 +368,8 @@ button { font-family: inherit; }
   animation: appwin-float 7s ease-in-out infinite;
 }
 @keyframes appwin-float {
-  0%, 100% { transform: translateY(-52%) rotateX(calc(4deg + var(--tilt-x, 0deg))) rotateY(calc(-7deg + var(--tilt-y, 0deg))); }
-  50% { transform: translateY(-48%) rotateX(calc(2deg + var(--tilt-x, 0deg))) rotateY(calc(-2deg + var(--tilt-y, 0deg))); }
+  0%, 100% { transform: translateY(0) rotateX(calc(4deg + var(--tilt-x, 0deg))) rotateY(calc(-7deg + var(--tilt-y, 0deg))); }
+  50% { transform: translateY(-4%) rotateX(calc(2deg + var(--tilt-x, 0deg))) rotateY(calc(-2deg + var(--tilt-y, 0deg))); }
 }
 .appwin-bar {
   display: flex; align-items: center; gap: 8px;
