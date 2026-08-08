@@ -436,7 +436,7 @@ button { font-family: inherit; }
 
 .scroll-hint {
   position: absolute; z-index: 4;
-  left: 50%; bottom: 34px;
+  left: 50%; bottom: 84px; /* 28px of air above the marquee strip */
   transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 10px;
   color: var(--text-faint); font-size: 11px; letter-spacing: 0.4em;
@@ -456,7 +456,9 @@ button { font-family: inherit; }
 
 /* ---------- Ticker ---------- */
 .ticker {
-  position: relative; z-index: 5;
+  /* anchored flush to the very bottom of the hero, below the SCROLL hint */
+  position: absolute; left: 0; right: 0; bottom: 0;
+  z-index: 5;
   border-top: 1px solid var(--stroke);
   border-bottom: 1px solid var(--stroke);
   background: rgba(255, 255, 255, 0.55);
@@ -1122,10 +1124,9 @@ button { font-family: inherit; }
   .stat-num { font-size: 27px; }
 }
 
-/* Short viewports: the marquee strip sits at the bottom of the hero,
-   so the scroll hint (which would collide with it) is dropped. The
-   ticker is allowed to fall just below the fold on short screens —
-   the hero keeps its full top padding. */
+/* Short viewports: no room for the SCROLL hint between the content
+   and the marquee strip, so it's dropped. The ticker is allowed to
+   fall just below the fold — the hero keeps its full top padding. */
 @media (max-height: 940px) {
   .scroll-hint { display: none; }
 }
