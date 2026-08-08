@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skkut.github.io/silkstack.github.io/sitemap.xml

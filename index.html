@@ -3,9 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SilkStack Image Browser — The local home for your AI images</title>
-  <meta name="description" content="SilkStack Image Browser is a beautiful, fast, offline-first browser for AI-generated images. Parses ComfyUI, A1111 and more. No accounts, no cloud — everything runs on your machine.">
+  <title>SilkStack Image Browser — Search ComfyUI Images Locally</title>
+  <meta name="description" content="SilkStack Image Browser turns your ComfyUI output folders into a searchable local image library — index, search and analyze AI images offline, on your machine.">
+  <meta name="keywords" content="comfyui generated images, local image library, search local images, comfyui image browser, ai image organizer">
   <meta name="theme-color" content="#eef2f9">
+
+  <!-- SEO / social -->
+  <link rel="canonical" href="https://skkut.github.io/silkstack.github.io/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SilkStack Image Browser">
+  <meta property="og:title" content="SilkStack Image Browser — Search ComfyUI Images Locally">
+  <meta property="og:description" content="A free, open-source local image library for ComfyUI-generated images. Index, search and analyze every AI image on your machine — offline and private.">
+  <meta property="og:url" content="https://skkut.github.io/silkstack.github.io/">
+  <meta property="og:image" content="https://skkut.github.io/silkstack.github.io/assets/screenshot-hero-grid.webp">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SilkStack Image Browser — Search ComfyUI Images Locally">
+  <meta name="twitter:description" content="A free, open-source local image library for ComfyUI-generated images. Index, search and analyze every AI image on your machine — offline and private.">
+  <meta name="twitter:image" content="https://skkut.github.io/silkstack.github.io/assets/screenshot-hero-grid.webp">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SilkStack Image Browser",
+    "alternateName": "SilkStack",
+    "description": "A local image library for ComfyUI-generated images: index, search and analyze AI images offline on your own machine. Reads prompt, model, seed and workflow metadata out of your files.",
+    "url": "https://skkut.github.io/silkstack.github.io/",
+    "applicationCategory": "MultimediaApplication",
+    "keywords": "ComfyUI generated images, local image library, search local images, AI image browser",
+    "inLanguage": "en",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,10 +114,9 @@
           <span class="typed-wrap">beautifully organized, <span class="typed" id="typed"></span></span>
         </h1>
         <p class="hero-sub">
-          A beautiful, blazing-fast image browser built specially for viewing and organizing
-          AI-generated images — ComfyUI, Automatic1111 and beyond. It reads the prompt, model,
-          seed and workflow right out of your files, and lives entirely on your machine.
-          No accounts. No cloud. Everything on your machine.
+          A beautiful, blazing-fast image browser built for ComfyUI-generated images — and beyond.
+          It reads the prompt, model, seed and workflow right out of your files, so your local
+          image library is instantly searchable. No accounts. No cloud. Everything on your machine.
         </p>
 
         <div class="hero-cta">
@@ -298,11 +332,11 @@
 
       <div class="shot-strip reveal">
         <a href="assets/screenshot-hero-grid.webp" class="shot lightbox-trigger" data-cap="The grid" aria-label="Open grid screenshot in a lightbox">
-          <img src="assets/screenshot-hero-grid.webp" alt="SilkStack Image Browser hero grid" loading="lazy" width="640" height="400">
+          <img src="assets/screenshot-hero-grid.webp" alt="SilkStack Image Browser grid of ComfyUI-generated images" loading="lazy" width="640" height="400">
           <span class="shot-cap">The grid</span>
         </a>
         <a href="assets/screenshot-gallery.webp" class="shot lightbox-trigger" data-cap="The library" aria-label="Open gallery screenshot in a lightbox">
-          <img src="assets/screenshot-gallery.webp" alt="SilkStack Image Browser gallery view" loading="lazy" width="640" height="400">
+          <img src="assets/screenshot-gallery.webp" alt="SilkStack Image Browser local image library gallery view" loading="lazy" width="640" height="400">
           <span class="shot-cap">The library</span>
         </a>
         <a href="assets/screenshot-imagemodal.webp" class="shot lightbox-trigger" data-cap="The detail view" aria-label="Open image detail screenshot in a lightbox">
@@ -379,6 +413,10 @@
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false">Is my data sent anywhere? <span class="faq-chev">▾</span></button>
             <div class="faq-a"><p>No. SilkStack Image Browser runs entirely on your machine — no accounts, no cloud. Indexing, search, even the Premium AI features run locally on your own hardware.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Can I search my local images by prompt, model or seed? <span class="faq-chev">▾</span></button>
+            <div class="faq-a"><p>Yes. SilkStack indexes the metadata inside every image in your library, so you can search your local images by the prompt, model, seed, workflow and tags that generated them — all offline.</p></div>
           </div>
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false">Which AI tools does it support? <span class="faq-chev">▾</span></button>
