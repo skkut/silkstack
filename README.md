@@ -8,7 +8,7 @@ Deployed automatically to **https://silkstack.github.io** from the `main` branch
 
 | Section     | Content                                                    |
 |-------------|------------------------------------------------------------|
-| Hero        | Particle network, background video, typed headline, holographic browser mockup |
+| Hero        | Particle network, background video, typed headline, holographic desktop-window mockup |
 | About       | Real product story, stats counters, parallax screenshot with floating chips |
 | Features    | 6 interactive 3D-tilt cards (real features from the README/docs) |
 | Showcase    | Real app screenshots in a terminal frame + screenshot strip |

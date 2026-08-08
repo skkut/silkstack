@@ -33,32 +33,6 @@
   --glow-cyan: 0 0 24px rgba(2, 132, 199, 0.22);
   --glow-violet: 0 0 24px rgba(124, 58, 237, 0.22);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-
-  /* holo phone (SVG) — theme-adaptive */
-  --holo-g1: rgba(255, 255, 255, 0.65);
-  --holo-g2: rgba(207, 228, 255, 0.35);
-  --holo-g3: rgba(255, 255, 255, 0.6);
-  --holo-screen-stroke: rgba(2, 132, 199, 0.5);
-  --holo-notch: rgba(15, 48, 96, 0.25);
-  --holo-pill: rgba(255, 255, 255, 0.85);
-  --holo-pill-stroke: rgba(2, 132, 199, 0.4);
-  --holo-pill-ico: rgba(2, 132, 199, 0.8);
-  --holo-ui: rgba(15, 48, 96, 0.5);
-  --holo-ui-soft: rgba(15, 48, 96, 0.3);
-  --holo-ring: #0284c7;
-  --holo-chip-cyan-bg: rgba(2, 132, 199, 0.1);
-  --holo-chip-cyan-s: rgba(2, 132, 199, 0.4);
-  --holo-chip-cyan-t: #0369a1;
-  --holo-chip-violet-bg: rgba(124, 58, 237, 0.1);
-  --holo-chip-violet-s: rgba(124, 58, 237, 0.4);
-  --holo-chip-violet-t: #6d28d9;
-  --holo-chip-pink-bg: rgba(219, 39, 119, 0.1);
-  --holo-chip-pink-s: rgba(219, 39, 119, 0.4);
-  --holo-chip-pink-t: #be185d;
-  --holo-stack-bg: rgba(255, 255, 255, 0.75);
-  --holo-stack-s: rgba(2, 132, 199, 0.3);
-  --holo-stack-text: #0369a1;
-  --holo-home: rgba(15, 48, 96, 0.4);
 }
 
 /* ---------- Base ---------- */
@@ -357,25 +331,87 @@ button { font-family: inherit; }
 }
 .trust-sep { color: var(--cyan-soft); opacity: 0.7; }
 
-/* Holo phone */
+/* Holo desktop app window */
 .holo {
   position: absolute; z-index: 4;
-  right: 5vw; top: 50%;
+  right: 3.5vw; top: 50%;
   transform: translateY(-50%);
-  width: 280px;
+  width: min(430px, 32vw);
   perspective: 900px;
-  animation: holo-float 7s ease-in-out infinite;
-  transition: transform 0.25s var(--ease);
 }
-@keyframes holo-float {
-  0%, 100% { transform: translateY(-52%) rotateX(calc(8deg + var(--tilt-x, 0deg))) rotateY(calc(-12deg + var(--tilt-y, 0deg))); }
-  50% { transform: translateY(-48%) rotateX(calc(4deg + var(--tilt-x, 0deg))) rotateY(calc(-4deg + var(--tilt-y, 0deg))); }
-}
-.holo-phone {
+.appwin {
+  position: relative;
   width: 100%;
-  filter: drop-shadow(0 0 26px rgba(2, 132, 199, 0.25)) drop-shadow(0 24px 60px rgba(15, 48, 96, 0.2));
-  position: relative; z-index: 2;
+  background: var(--panel);
+  border: 1px solid var(--stroke-bright);
+  border-radius: 18px;
+  box-shadow:
+    0 30px 70px rgba(15, 48, 96, 0.26),
+    0 0 40px rgba(2, 132, 199, 0.14),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  overflow: hidden;
+  animation: appwin-float 7s ease-in-out infinite;
 }
+@keyframes appwin-float {
+  0%, 100% { transform: translateY(-52%) rotateX(calc(4deg + var(--tilt-x, 0deg))) rotateY(calc(-7deg + var(--tilt-y, 0deg))); }
+  50% { transform: translateY(-48%) rotateX(calc(2deg + var(--tilt-x, 0deg))) rotateY(calc(-2deg + var(--tilt-y, 0deg))); }
+}
+.appwin-bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 11px 14px;
+  background: rgba(255, 255, 255, 0.55);
+  border-bottom: 1px solid var(--stroke);
+}
+.appwin-dot { width: 11px; height: 11px; border-radius: 50%; }
+.appwin-dot-red { background: #ff5f57; }
+.appwin-dot-yellow { background: #febc2e; }
+.appwin-dot-green { background: #28c840; }
+.appwin-title {
+  margin-left: 10px;
+  font-family: var(--font-display);
+  font-size: 10.5px; letter-spacing: 0.24em;
+  color: var(--text-faint); text-transform: uppercase;
+}
+.appwin-body { position: relative; padding: 10px; }
+.appwin-shot {
+  display: block; width: 100%; height: auto;
+  border-radius: 10px;
+}
+.appwin-scan {
+  position: absolute; left: 12px; right: 12px; top: 12px;
+  height: 40%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(2, 132, 199, 0.09) 50%, transparent 100%);
+  pointer-events: none;
+  animation: appwin-scan 5s ease-in-out infinite;
+}
+@keyframes appwin-scan {
+  0%, 100% { transform: translateY(0); opacity: 0; }
+  10%, 90% { opacity: 1; }
+  50% { transform: translateY(220%); opacity: 0.55; }
+}
+.appwin-chip {
+  position: absolute; z-index: 3;
+  left: 24px; bottom: -14px;
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--stroke-bright);
+  color: var(--text-dim);
+  font-size: 11px; letter-spacing: 0.12em;
+  box-shadow: 0 8px 24px rgba(15, 48, 96, 0.18), var(--glow-cyan);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.appwin-chip i {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.8);
+  animation: chip-pulse 2s ease-in-out infinite;
+}
+@keyframes chip-pulse { 50% { opacity: 0.35; } }
 .holo-halo {
   position: absolute; z-index: 1;
   inset: 8% -18%;
@@ -1017,32 +1053,6 @@ button { font-family: inherit; }
 
     --glow-cyan: 0 0 24px rgba(0, 229, 255, 0.35);
     --glow-violet: 0 0 24px rgba(168, 85, 247, 0.35);
-
-    /* holo phone (SVG) */
-    --holo-g1: rgba(0, 229, 255, 0.35);
-    --holo-g2: rgba(139, 92, 246, 0.12);
-    --holo-g3: rgba(255, 46, 136, 0.35);
-    --holo-screen-stroke: rgba(120, 255, 255, 0.5);
-    --holo-notch: rgba(0, 0, 0, 0.55);
-    --holo-pill: rgba(10, 20, 40, 0.7);
-    --holo-pill-stroke: rgba(148, 233, 255, 0.5);
-    --holo-pill-ico: rgba(148, 233, 255, 0.8);
-    --holo-ui: rgba(148, 233, 255, 0.55);
-    --holo-ui-soft: rgba(148, 233, 255, 0.3);
-    --holo-ring: #00e5ff;
-    --holo-chip-cyan-bg: rgba(0, 229, 255, 0.14);
-    --holo-chip-cyan-s: rgba(0, 229, 255, 0.4);
-    --holo-chip-cyan-t: #7de9ff;
-    --holo-chip-violet-bg: rgba(168, 85, 247, 0.14);
-    --holo-chip-violet-s: rgba(168, 85, 247, 0.4);
-    --holo-chip-violet-t: #c9a7ff;
-    --holo-chip-pink-bg: rgba(255, 46, 136, 0.14);
-    --holo-chip-pink-s: rgba(255, 46, 136, 0.4);
-    --holo-chip-pink-t: #ffa8cf;
-    --holo-stack-bg: rgba(10, 20, 40, 0.6);
-    --holo-stack-s: rgba(120, 255, 255, 0.35);
-    --holo-stack-text: #7de9ff;
-    --holo-home: rgba(255, 255, 255, 0.45);
   }
 
   .orb { opacity: 0.3; }
@@ -1086,9 +1096,12 @@ button { font-family: inherit; }
   .holo-halo {
     background: radial-gradient(ellipse at center, rgba(0, 229, 255, 0.22), rgba(168, 85, 247, 0.14) 50%, transparent 72%);
   }
-  .holo-phone {
-    filter: drop-shadow(0 0 34px rgba(0, 229, 255, 0.28)) drop-shadow(0 24px 60px rgba(168, 85, 247, 0.25));
+  .appwin {
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 44px rgba(0, 229, 255, 0.16), inset 0 0 0 1px rgba(120, 255, 255, 0.14);
   }
+  .appwin-bar { background: rgba(7, 11, 26, 0.7); border-bottom-color: rgba(0, 229, 255, 0.12); }
+  .appwin-scan { background: linear-gradient(to bottom, transparent 0%, rgba(0, 229, 255, 0.09) 50%, transparent 100%); }
+  .appwin-chip { background: rgba(10, 17, 36, 0.85); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), var(--glow-cyan); }
 
   .ticker { background: rgba(7, 11, 26, 0.6); }
 
