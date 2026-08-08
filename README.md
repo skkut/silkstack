@@ -8,7 +8,7 @@ Deployed automatically to **https://silkstack.github.io** from the `main` branch
 
 | Section     | Content                                                    |
 |-------------|------------------------------------------------------------|
-| Hero        | Full-page particle network, typed headline, holographic desktop-window mockup |
+| Hero        | Particle network, typed headline, holographic desktop-window mockup |
 | About       | Real product story, stats counters, parallax screenshot with floating chips |
 | Features    | 6 interactive 3D-tilt cards (real features from the README/docs) |
 | Showcase    | Real app screenshots in a terminal frame + screenshot strip |
@@ -27,5 +27,5 @@ Deployed automatically to **https://silkstack.github.io** from the `main` branch
 - **Product copy** — edit `index.html`; content is sourced from the app's README and `docs/`.
 - **Screenshots** — `assets/` holds the current ones; regenerate them from `SilkStack-Image-Browser/docs/` when the app changes.
 - **Premium license link** — the "Get a license" button points at the Gumroad purchase page (`silkstackbrowser.gumroad.com/l/images`). Update it in the Premium section of `index.html` if the storefront URL changes.
-- **Ambient background** — a fixed canvas particle network fills the whole page behind the content (no video), so the page loads fast; tune its density in `script.js` (particle count formula in section 1).
+- **Hero background** — a canvas particle network only (no video), so the page loads fast; tune its density in `script.js` (particle count formula in section 1).
 - **Contact form** — demo only; it shows a toast and sends nothing. Wire `#contactForm` to your own endpoint.
