@@ -1122,12 +1122,12 @@ button { font-family: inherit; }
   .stat-num { font-size: 27px; }
 }
 
-/* Short viewports: the marquee strip marks the bottom of the first
-   screen, so the scroll hint (which would collide with it) is dropped
-   and the hero sheds a little top padding to keep everything on screen */
+/* Short viewports: the marquee strip sits at the bottom of the hero,
+   so the scroll hint (which would collide with it) is dropped. The
+   ticker is allowed to fall just below the fold on short screens —
+   the hero keeps its full top padding. */
 @media (max-height: 940px) {
   .scroll-hint { display: none; }
-  .hero { padding-top: 104px; }
 }
 
 /* ---------- Dark mode (automatic, follows OS) ---------- */

@@ -8,7 +8,7 @@ Deployed automatically to **https://skkut.github.io/silkstack** from the `main` 
 
 | Section     | Content                                                    |
 |-------------|------------------------------------------------------------|
-| Hero        | Particle network, typed headline, holographic desktop-window mockup |
+| Hero        | Particle network, typed headline, holographic desktop-window mockup, scrolling marquee strip |
 | About       | Real product story, stats counters, parallax screenshot with floating chips |
 | Features    | 6 interactive 3D-tilt cards (real features from the README/docs) |
 | Showcase    | Real app screenshots in a terminal frame + screenshot strip |
