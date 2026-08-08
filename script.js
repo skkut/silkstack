@@ -45,9 +45,9 @@
           const dx = mouse.x - p.x;
           const dy = mouse.y - p.y;
           const d2 = dx * dx + dy * dy;
-          if (d2 < 240 * 240) {
-            p.x += dx * 0.001;
-            p.y += dy * 0.001;
+          if (d2 < 220 * 220) {
+            p.x += dx * 0.0006;
+            p.y += dy * 0.0006;
           }
         }
 
@@ -219,13 +219,13 @@
   /* ───────── 8. 3D tilt on cards ───────── */
   const tiltEls = document.querySelectorAll("[data-tilt]");
   if (tiltEls.length && !REDUCED && !COARSE) {
-    const MAX = 5;
+    const MAX = 3;
     for (const el of tiltEls) {
       el.addEventListener("pointermove", (e) => {
         const rect = el.getBoundingClientRect();
         const px = (e.clientX - rect.left) / rect.width - 0.5;
         const py = (e.clientY - rect.top) / rect.height - 0.5;
-        el.style.transform = `perspective(1100px) rotateY(${px * MAX}deg) rotateX(${-py * MAX}deg) translateZ(0)`;
+        el.style.transform = `perspective(1400px) rotateY(${px * MAX}deg) rotateX(${-py * MAX}deg) translateZ(0)`;
       });
       el.addEventListener("pointerleave", () => {
         el.style.transform = "";
@@ -240,8 +240,8 @@
     const onMouse = (e) => {
       const nx = e.clientX / window.innerWidth - 0.5;
       const ny = e.clientY / window.innerHeight - 0.5;
-      targetRY = nx * 10;
-      targetRX = -ny * 7;
+      targetRY = nx * 6;
+      targetRX = -ny * 4;
       if (raf === null) raf = requestAnimationFrame(frame);
     };
     const frame = () => {
@@ -354,7 +354,7 @@
         const rect = btn.getBoundingClientRect();
         const dx = e.clientX - (rect.left + rect.width / 2);
         const dy = e.clientY - (rect.top + rect.height / 2);
-        btn.style.transform = `translate(${dx * 0.12}px, ${dy * 0.12}px)`;
+        btn.style.transform = `translate(${dx * 0.06}px, ${dy * 0.06}px)`;
       });
       btn.addEventListener("mouseleave", () => {
         btn.style.transform = "";
