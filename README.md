@@ -1,29 +1,31 @@
-# SilkStack — github.io
+# silkstack.github.io
 
-A futuristic, interactive one-pager for the SilkStack app. Deployed automatically to
-**https://silkstack.github.io** from the `main` branch.
+Futuristic one-pager for the **SilkStack Image Browser** — the local image browser for
+AI-generated images ([github.com/skkut/SilkStack-Image-Browser](https://github.com/skkut/SilkStack-Image-Browser)).
+Deployed automatically to **https://silkstack.github.io** from the `main` branch.
 
 ## Sections
 
-| Section     | Content                                              |
-|-------------|------------------------------------------------------|
-| Hero        | Animated particle network, background video, typed headline, holographic phone |
-| About       | Story, stats counters, parallax image with floating chips |
-| Features    | 6 interactive 3D-tilt cards                          |
-| Showcase    | Playable interface demo video in a terminal frame    |
-| Premium     | 3 pricing tiers with monthly/yearly toggle           |
-| Support     | FAQ accordion, contact form, support channels        |
+| Section     | Content                                                    |
+|-------------|------------------------------------------------------------|
+| Hero        | Particle network, background video, typed headline, holographic browser mockup |
+| About       | Real product story, stats counters, parallax screenshot with floating chips |
+| Features    | 6 interactive 3D-tilt cards (real features from the README/docs) |
+| Showcase    | Real app screenshots in a terminal frame + screenshot strip |
+| Premium     | Community (free, MPL-2.0) vs Premium (one-time license)    |
+| Support     | FAQ, contact form, links to Issues / Releases / Docs / License |
 
 ## Files
 
 - `index.html` — page structure and copy
 - `style.css` — futuristic theme (deep space + neon cyan/violet/magenta)
 - `script.js` — vanilla JS interactions (particles, tilt, typing, counters, accordion…)
+- `assets/` — real screenshots from the app repo (`docs/screenshot-*.webp`) and the app icon
 
 ## Customising
 
-- **Copy/branding** — edit the text in `index.html` (brand: SilkStack).
-- **Videos** — each `<video>` has a fallback chain of `<source>` elements; swap in your own MP4 URLs. The hero video is at `#heroVideo`, the showcase at `#showcaseVideo`.
-- **Images** — placeholder photos come from picsum.photos; replace the `src` attributes with your own.
-- **Plans & prices** — `#premium` section; prices are wired to the toggle via `data-monthly` / `data-yearly` attributes.
+- **Product copy** — edit `index.html`; content is sourced from the app's README and `docs/`.
+- **Screenshots** — `assets/` holds the current ones; regenerate them from `SilkStack-Image-Browser/docs/` when the app changes.
+- **Premium license link** — the "Get a license" button points at GitHub Issues. Replace with your Gumroad purchase URL when you have one (see `src/services/licenseService.ts` in the app repo).
+- **Videos** — each `<video>` has a fallback chain of `<source>` elements; the hero uses stock abstract footage, swap in your own MP4s or the app's screen recording.
 - **Contact form** — demo only; it shows a toast and sends nothing. Wire `#contactForm` to your own endpoint.

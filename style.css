@@ -185,7 +185,7 @@ button { font-family: inherit; }
   padding: 16px 28px;
 }
 .brand { display: inline-flex; align-items: center; gap: 10px; }
-.brand-mark { width: 30px; height: 30px; filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.6)); }
+.brand-mark { width: 30px; height: 30px; border-radius: 8px; filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.6)); }
 .brand-name {
   font-family: var(--font-display); font-weight: 800; font-size: 16.5px;
   letter-spacing: 0.22em;
@@ -626,7 +626,8 @@ button { font-family: inherit; }
   font-family: var(--font-display); font-size: 10.5px; letter-spacing: 0.26em;
   color: var(--lime);
 }
-.frame-screen video {
+.frame-screen video,
+.frame-screen img {
   width: 100%; aspect-ratio: 16 / 9;
   object-fit: cover;
   background: #05070f;
@@ -641,41 +642,58 @@ button { font-family: inherit; }
   color: var(--text-faint); font-size: 14.5px; font-style: italic;
 }
 
-/* ---------- Premium ---------- */
-.billing-toggle {
-  margin: 34px auto 0;
-  display: inline-flex; gap: 4px;
-  background: rgba(7, 11, 26, 0.8);
-  border: 1px solid var(--stroke);
-  border-radius: 999px;
-  padding: 5px;
-}
-.bill-btn {
-  border: none; background: none; cursor: pointer;
-  padding: 11px 24px;
-  border-radius: 999px;
-  font-size: 14px; font-weight: 600; letter-spacing: 0.06em;
-  color: var(--text-dim);
-  transition: all 0.35s var(--ease);
-}
-.bill-btn.active {
-  background: var(--grad-main);
-  color: #02101c;
-  box-shadow: 0 4px 20px rgba(0, 229, 255, 0.35);
-}
-.save-badge {
-  margin-left: 8px;
-  font-family: var(--font-display); font-size: 9.5px; letter-spacing: 0.2em;
-  color: var(--lime);
-  border: 1px solid rgba(163, 230, 53, 0.45);
-  border-radius: 999px; padding: 3px 8px;
-}
-
-.plans {
+/* Screenshot strip */
+.shot-strip {
+  max-width: 940px;
+  margin: 26px auto 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.shot {
+  position: relative;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid var(--stroke);
+  overflow: hidden;
+  background: var(--panel);
+  transition: border-color 0.35s var(--ease), transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+.shot:hover {
+  border-color: var(--stroke-bright);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.5), 0 0 34px rgba(0, 229, 255, 0.14);
+}
+.shot img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease), filter 0.4s;
+  filter: saturate(1.05);
+}
+.shot:hover img { transform: scale(1.05); }
+.shot-cap {
+  position: absolute;
+  left: 14px; bottom: 12px;
+  font-family: var(--font-display);
+  font-size: 10px; letter-spacing: 0.24em;
+  color: var(--text);
+  background: rgba(4, 6, 15, 0.72);
+  border: 1px solid var(--stroke-bright);
+  border-radius: 999px;
+  padding: 5px 12px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* ---------- Premium ---------- */
+.plans {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 26px;
   align-items: stretch;
+  max-width: 980px;
+  margin: 0 auto;
   perspective: 1200px;
 }
 .plan {
@@ -726,8 +744,6 @@ button { font-family: inherit; }
 }
 .plan-featured .price-num { filter: drop-shadow(0 0 16px rgba(0, 229, 255, 0.4)); }
 .price-per { color: var(--text-faint); font-size: 13.5px; }
-.price-pop { animation: price-pop 0.35s var(--ease); }
-@keyframes price-pop { 50% { transform: scale(1.14); } }
 
 .plan-feats { list-style: none; display: grid; gap: 11px; flex: 1; }
 .plan-feats li {
@@ -929,8 +945,7 @@ button { font-family: inherit; }
 /* ---------- Responsive ---------- */
 @media (max-width: 1080px) {
   .holo { display: none; }
-  .features-grid, .plans { grid-template-columns: repeat(2, 1fr); }
-  .plan-featured { order: -1; grid-column: 1 / -1; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
   .about-grid { gap: 44px; }
 }
 
@@ -945,7 +960,7 @@ button { font-family: inherit; }
 }
 
 @media (max-width: 560px) {
-  .features-grid, .plans, .channels, .footer-grid { grid-template-columns: 1fr; }
+  .features-grid, .plans, .channels, .shot-strip, .footer-grid { grid-template-columns: 1fr; }
   .hero-cta .btn { width: 100%; }
   .hero-title { font-size: 30px; }
   .about-stats { gap: 26px; }

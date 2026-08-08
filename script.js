@@ -293,31 +293,7 @@
     });
   }
 
-  /* ───────── 11. Pricing toggle ───────── */
-  const billMonthly = document.getElementById("billMonthly");
-  const billYearly = document.getElementById("billYearly");
-  const priceNums = document.querySelectorAll(".price-num");
-  const pricePers = document.querySelectorAll(".price-per");
-  const setBilling = (yearly) => {
-    if (!billMonthly || !billYearly) return;
-    billMonthly.classList.toggle("active", !yearly);
-    billYearly.classList.toggle("active", yearly);
-    billMonthly.setAttribute("aria-pressed", String(!yearly));
-    billYearly.setAttribute("aria-pressed", String(yearly));
-    priceNums.forEach((el) => {
-      el.textContent = yearly ? el.dataset.yearly : el.dataset.monthly;
-      el.classList.remove("price-pop");
-      void el.offsetWidth; // restart animation
-      el.classList.add("price-pop");
-    });
-    pricePers.forEach((el) => {
-      if (el.dataset.yearly) el.textContent = yearly ? el.dataset.yearly : el.dataset.monthly;
-    });
-  };
-  billMonthly?.addEventListener("click", () => setBilling(false));
-  billYearly?.addEventListener("click", () => setBilling(true));
-
-  /* ───────── 12. FAQ accordion ───────── */
+  /* ───────── 11. FAQ accordion ───────── */
   const faqQs = document.querySelectorAll(".faq-q");
   faqQs.forEach((q) => {
     q.addEventListener("click", () => {
@@ -335,7 +311,7 @@
     });
   });
 
-  /* ───────── 13. Contact form (demo) ───────── */
+  /* ───────── 12. Contact form (demo) ───────── */
   const form = document.getElementById("contactForm");
   const toast = document.getElementById("toast");
   if (form) {
@@ -353,7 +329,7 @@
     });
   }
 
-  /* ───────── 14. Cursor glow ───────── */
+  /* ───────── 13. Cursor glow ───────── */
   const glow = document.querySelector(".cursor-glow");
   if (glow && !COARSE && !REDUCED) {
     let gx = -1000, gy = -1000, tx = gx, ty = gy, running = false;
@@ -370,7 +346,7 @@
     }, { passive: true });
   }
 
-  /* ───────── 15. Magnetic buttons ───────── */
+  /* ───────── 14. Magnetic buttons ───────── */
   const magnetBtns = document.querySelectorAll(".magnetic");
   if (magnetBtns.length && !COARSE && !REDUCED) {
     magnetBtns.forEach((btn) => {
@@ -386,7 +362,7 @@
     });
   }
 
-  /* ───────── 16. Pause hero video off-screen ───────── */
+  /* ───────── 15. Pause hero video off-screen ───────── */
   const heroVideo = document.getElementById("heroVideo");
   const hero = document.getElementById("home");
   if (heroVideo && hero) {
