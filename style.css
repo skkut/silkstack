@@ -263,10 +263,14 @@ button { font-family: inherit; }
   max-width: 1240px; width: 100%;
   margin: 0 auto;
 }
-/* Reserve the app-window's footprint so hero text never runs under it
-   (window: right 3.5vw, width min(430px, 32vw); hidden below 1080px) */
+/* Keep the hero text broad and left-aligned, filling up to the app
+   window instead of running under it (window: right 2vw,
+   width min(340px, 24vw); hidden below 1080px) */
 @media (min-width: 1081px) {
-  .hero-content { padding-right: calc(min(430px, 32vw) + 3.5vw + 2vw); }
+  .hero-content {
+    width: calc(100% - min(340px, 24vw) - 2vw - 2vw);
+    margin-left: 0;
+  }
 }
 
 .eyebrow {
@@ -291,7 +295,7 @@ button { font-family: inherit; }
   margin-top: 28px;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(34px, 5.4vw, 62px);
+  font-size: clamp(30px, 3.5vw, 52px);
   line-height: 1.12;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -331,9 +335,9 @@ button { font-family: inherit; }
 /* Holo desktop app window */
 .holo {
   position: absolute; z-index: 4;
-  right: 3.5vw; top: 50%;
+  right: 2vw; top: 50%;
   transform: translateY(-50%);
-  width: min(430px, 32vw);
+  width: min(340px, 24vw);
   perspective: 900px;
 }
 .appwin {
