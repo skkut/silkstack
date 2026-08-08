@@ -21,13 +21,13 @@
     const resize = () => {
       W = canvas.width = canvas.offsetWidth;
       H = canvas.height = canvas.offsetHeight;
-      const count = Math.min(150, Math.floor((W * H) / 13000));
+      const count = Math.min(170, Math.floor((W * H) / 11000));
       particles = Array.from({ length: count }, () => ({
         x: Math.random() * W,
         y: Math.random() * H,
         vx: (Math.random() - 0.5) * 0.55,
         vy: (Math.random() - 0.5) * 0.55,
-        r: Math.random() * 1.8 + 0.8,
+        r: Math.random() * 2.2 + 1.0,
         hue: Math.random() > 0.5 ? 190 : 265, // cyan ~ violet
       }));
     };
@@ -59,7 +59,7 @@
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${p.hue}, 100%, 68%, 0.75)`;
+        ctx.fillStyle = `hsla(${p.hue}, 100%, 70%, 0.9)`;
         ctx.fill();
       }
 
@@ -71,9 +71,9 @@
           const dx = a.x - b.x;
           const dy = a.y - b.y;
           const d2 = dx * dx + dy * dy;
-          if (d2 < 130 * 130) {
-            const alpha = 1 - Math.sqrt(d2) / 130;
-            ctx.strokeStyle = `hsla(195, 100%, 62%, ${alpha * 0.28})`;
+          if (d2 < 150 * 150) {
+            const alpha = 1 - Math.sqrt(d2) / 150;
+            ctx.strokeStyle = `hsla(195, 100%, 66%, ${alpha * 0.4})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
