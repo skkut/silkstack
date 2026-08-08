@@ -263,6 +263,11 @@ button { font-family: inherit; }
   max-width: 1240px; width: 100%;
   margin: 0 auto;
 }
+/* Reserve the app-window's footprint so hero text never runs under it
+   (window: right 3.5vw, width min(430px, 32vw); hidden below 1080px) */
+@media (min-width: 1081px) {
+  .hero-content { padding-right: calc(min(430px, 32vw) + 3.5vw + 2vw); }
+}
 
 .eyebrow {
   display: inline-flex; align-items: center; gap: 10px;
