@@ -372,4 +372,56 @@
   schemeMQ.addEventListener?.("change", syncThemeColor);
   syncThemeColor();
 
+  /* ───────── 16. Lightbox ───────── */
+  const lightbox = document.getElementById("lightbox");
+  if (lightbox) {
+    const lbImg = lightbox.querySelector(".lightbox-img");
+    const lbCap = lightbox.querySelector(".lightbox-cap");
+    const prevBtn = lightbox.querySelector(".lightbox-prev");
+    const nextBtn = lightbox.querySelector(".lightbox-next");
+    const triggers = [...document.querySelectorAll(".lightbox-trigger")];
+    let index = 0;
+    let opener = null;
+
+    const show = (i) => {
+      index = (i + triggers.length) % triggers.length;
+      const t = triggers[index];
+      lbImg.src = t.href;
+      lbImg.alt = t.querySelector("img")?.alt || "";
+      lbCap.textContent = t.dataset.cap || "";
+    };
+
+    const open = (t) => {
+      opener = t;
+      show(triggers.indexOf(t));
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden"; // lock scroll behind the overlay
+      prevBtn?.focus();
+    };
+
+    const close = () => {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      opener?.focus();
+    };
+
+    triggers.forEach((t) =>
+      t.addEventListener("click", (e) => {
+        e.preventDefault();
+        open(t);
+      })
+    );
+    lightbox.querySelectorAll("[data-lb-close]").forEach((el) => el.addEventListener("click", close));
+    prevBtn?.addEventListener("click", () => show(index - 1));
+    nextBtn?.addEventListener("click", () => show(index + 1));
+    document.addEventListener("keydown", (e) => {
+      if (!lightbox.classList.contains("open")) return;
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowLeft") show(index - 1);
+      else if (e.key === "ArrowRight") show(index + 1);
+    });
+  }
+
 })();

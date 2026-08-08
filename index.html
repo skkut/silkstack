@@ -157,10 +157,12 @@
       <div class="about-grid">
         <div class="about-visual reveal" data-parallax="0.06">
           <div class="media-frame">
-            <img
-              src="assets/screenshot-gallery.webp"
-              alt="SilkStack Image Browser gallery grid showing AI-generated images with metadata"
-              width="900" height="640" loading="lazy">
+            <a class="lightbox-trigger" href="assets/screenshot-gallery.webp" data-cap="The library — Adaptive Grid view" aria-label="Open screenshot in a lightbox">
+              <img
+                src="assets/screenshot-gallery.webp"
+                alt="SilkStack Image Browser gallery grid showing AI-generated images with metadata"
+                width="900" height="640" loading="lazy">
+            </a>
             <div class="frame-scan" aria-hidden="true"></div>
           </div>
           <div class="float-chip chip-a">🧠 Prompt · model · seed parsed</div>
@@ -286,22 +288,24 @@
           <span class="fb-live"><span class="pulse-dot"></span> V2.0</span>
         </div>
         <div class="frame-screen">
-          <img src="assets/screenshot-imagemodal.webp"
-               alt="SilkStack Image Browser full-image view with prompt metadata panel"
-               width="1280" height="720" loading="lazy">
+          <a class="lightbox-trigger" href="assets/screenshot-imagemodal.webp" data-cap="The detail view — full image with the prompt metadata panel" aria-label="Open screenshot in a lightbox">
+            <img src="assets/screenshot-imagemodal.webp"
+                 alt="SilkStack Image Browser full-image view with prompt metadata panel"
+                 width="1280" height="720" loading="lazy">
+          </a>
         </div>
       </div>
 
       <div class="shot-strip reveal">
-        <a href="assets/screenshot-hero-grid.webp" target="_blank" rel="noopener" class="shot" aria-label="Open full-size grid screenshot">
+        <a href="assets/screenshot-hero-grid.webp" class="shot lightbox-trigger" data-cap="The grid" aria-label="Open grid screenshot in a lightbox">
           <img src="assets/screenshot-hero-grid.webp" alt="SilkStack Image Browser hero grid" loading="lazy" width="640" height="400">
           <span class="shot-cap">The grid</span>
         </a>
-        <a href="assets/screenshot-gallery.webp" target="_blank" rel="noopener" class="shot" aria-label="Open full-size gallery screenshot">
+        <a href="assets/screenshot-gallery.webp" class="shot lightbox-trigger" data-cap="The library" aria-label="Open gallery screenshot in a lightbox">
           <img src="assets/screenshot-gallery.webp" alt="SilkStack Image Browser gallery view" loading="lazy" width="640" height="400">
           <span class="shot-cap">The library</span>
         </a>
-        <a href="assets/screenshot-imagemodal.webp" target="_blank" rel="noopener" class="shot" aria-label="Open full-size image modal screenshot">
+        <a href="assets/screenshot-imagemodal.webp" class="shot lightbox-trigger" data-cap="The detail view" aria-label="Open image detail screenshot in a lightbox">
           <img src="assets/screenshot-imagemodal.webp" alt="SilkStack Image Browser image detail view" loading="lazy" width="640" height="400">
           <span class="shot-cap">The detail view</span>
         </a>
@@ -471,6 +475,20 @@
       </span>
     </div>
   </footer>
+
+  <!-- ══════════ LIGHTBOX ══════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+    <div class="lightbox-backdrop" data-lb-close></div>
+    <div class="lightbox-stage">
+      <button class="lightbox-btn lightbox-close" data-lb-close aria-label="Close image viewer">✕</button>
+      <button class="lightbox-btn lightbox-prev" aria-label="Previous image">‹</button>
+      <figure class="lightbox-figure">
+        <img class="lightbox-img" src="" alt="" width="1280" height="720">
+        <figcaption class="lightbox-cap"></figcaption>
+      </figure>
+      <button class="lightbox-btn lightbox-next" aria-label="Next image">›</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
