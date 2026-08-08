@@ -2,7 +2,7 @@
 
 Futuristic one-pager for the **SilkStack Image Browser** — the local image browser for
 AI-generated images ([github.com/skkut/SilkStack-Image-Browser](https://github.com/skkut/SilkStack-Image-Browser)).
-Deployed automatically to **https://silkstack.github.io** from the `main` branch.
+Deployed automatically to **https://skkut.github.io/silkstack** from the `main` branch.
 
 ## Sections
 
