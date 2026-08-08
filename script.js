@@ -10,7 +10,7 @@
   const COARSE = window.matchMedia("(pointer: coarse)").matches;
   const lerp = (a, b, t) => a + (b - a) * t;
 
-  /* ───────── 1. Particle network (hero canvas) ───────── */
+  /* ───────── 1. Particle network (full-page canvas) ───────── */
   const canvas = document.getElementById("particles");
   if (canvas) {
     const ctx = canvas.getContext("2d");
@@ -19,8 +19,9 @@
     const mouse = { x: null, y: null };
 
     const resize = () => {
-      W = canvas.width = canvas.offsetWidth;
-      H = canvas.height = canvas.offsetHeight;
+      // fixed background layer — always the size of the viewport
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
       const count = Math.min(170, Math.floor((W * H) / 11000));
       particles = Array.from({ length: count }, () => ({
         x: Math.random() * W,
