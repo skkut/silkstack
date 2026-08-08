@@ -21,7 +21,7 @@
     const resize = () => {
       W = canvas.width = canvas.offsetWidth;
       H = canvas.height = canvas.offsetHeight;
-      const count = Math.min(110, Math.floor((W * H) / 16000));
+      const count = Math.min(150, Math.floor((W * H) / 13000));
       particles = Array.from({ length: count }, () => ({
         x: Math.random() * W,
         y: Math.random() * H,
@@ -372,20 +372,4 @@
   schemeMQ.addEventListener?.("change", syncThemeColor);
   syncThemeColor();
 
-  /* ───────── 16. Pause hero video off-screen ───────── */
-  const heroVideo = document.getElementById("heroVideo");
-  const hero = document.getElementById("home");
-  if (heroVideo && hero) {
-    const onScroll = () => {
-      const rect = hero.getBoundingClientRect();
-      const visible = rect.bottom > 0 && rect.top < window.innerHeight;
-      if (visible) {
-        heroVideo.play().catch(() => { /* autoplay blocked — poster shows */ });
-      } else {
-        heroVideo.pause();
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-  }
 })();
