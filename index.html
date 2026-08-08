@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SilkStack — The Future of Work, Reimagined</title>
+  <meta name="description" content="SilkStack is an AI-native workspace that adapts to you. Features, premium plans and support for the most futuristic productivity app on Earth.">
+  <meta name="theme-color" content="#04060f">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300e5ff'/%3E%3Cstop offset='1' stop-color='%23a855f7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23g)' d='M16 2l12 7v14l-12 7L4 23V9z'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%2304060f'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══════════ AMBIENT LAYERS ══════════ -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+  </div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div id="progress" class="progress" aria-hidden="true"></div>
+
+  <!-- ══════════ NAVIGATION ══════════ -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="brand" aria-label="SilkStack home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00e5ff"/><stop offset="1" stop-color="#a855f7"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#brandGrad)" d="M16 2l12 7v14l-12 7L4 23V9z"/>
+          <circle cx="16" cy="16" r="5" fill="#04060f"/>
+        </svg>
+        <span class="brand-name">SILK<span class="brand-accent">STACK</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#showcase" class="nav-link">Showcase</a>
+        <a href="#premium" class="nav-link">Premium</a>
+        <a href="#support" class="nav-link">Support</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="#premium" class="btn btn-ghost btn-sm">Sign in</a>
+        <a href="#support" class="btn btn-primary btn-sm">Get started</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#features" class="mobile-link">Features</a>
+      <a href="#showcase" class="mobile-link">Showcase</a>
+      <a href="#premium" class="mobile-link">Premium</a>
+      <a href="#support" class="mobile-link">Support</a>
+      <a href="#support" class="btn btn-primary">Get started</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ══════════ HERO ══════════ -->
+    <section class="hero" id="home">
+      <!-- Particle network (canvas) -->
+      <canvas id="particles" aria-hidden="true"></canvas>
+
+      <!-- Background video with graceful fallback chain -->
+      <video id="heroVideo" class="hero-video" autoplay muted loop playsinline
+             poster="https://picsum.photos/seed/silkstack-neon/1920/1080" preload="metadata" aria-hidden="true">
+        <source src="https://videos.pexels.com/video-files/29049354/29049354-hd_1920_1080_25fps.mp4" type="video/mp4">
+        <source src="https://videos.pexels.com/video-files/34645139/34645139-hd_1920_1080_25fps.mp4" type="video/mp4">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      </video>
+
+      <div class="hero-content">
+        <p class="eyebrow">
+          <span class="pulse-dot"></span> SILKSTACK&nbsp;OS&nbsp;3.0 — NOW&nbsp;IN&nbsp;BETA
+        </p>
+        <h1 class="hero-title">
+          The workspace of tomorrow,<br>
+          <span class="typed-wrap">you are running <span class="typed" id="typed"></span></span>
+        </h1>
+        <p class="hero-sub">
+          SilkStack is an AI-native operating layer for your work. It predicts your flow,
+          automates the repetitive, and renders everything through a holographic interface —
+          so you stay in the zone, not in the app.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#features" class="btn btn-primary btn-lg magnetic">Enter the future <span class="btn-arrow">→</span></a>
+          <a href="#showcase" class="btn btn-glass btn-lg magnetic"><span class="play-ico">▶</span> Watch the demo</a>
+        </div>
+
+        <div class="hero-trust">
+          <span>★ 4.9 / 5 from 12,000+ pilots</span>
+          <span class="trust-sep">·</span>
+          <span>No credit card required</span>
+          <span class="trust-sep">·</span>
+          <span>Free forever tier</span>
+        </div>
+      </div>
+
+      <!-- Holographic phone mockup (pure SVG, spins on mouse move) -->
+      <div class="holo" id="holo" aria-hidden="true">
+        <svg viewBox="0 0 240 480" class="holo-phone">
+          <defs>
+            <linearGradient id="holoGlass" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#00e5ff" stop-opacity="0.35"/>
+              <stop offset="0.5" stop-color="#8b5cf6" stop-opacity="0.12"/>
+              <stop offset="1" stop-color="#ff2e88" stop-opacity="0.35"/>
+            </linearGradient>
+            <linearGradient id="holoUi" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#a855f7"/>
+            </linearGradient>
+          </defs>
+          <!-- screen -->
+          <rect x="12" y="20" width="216" height="440" rx="28" fill="url(#holoGlass)" stroke="rgba(120,255,255,.5)" stroke-width="1.5"/>
+          <!-- notch -->
+          <rect x="92" y="30" width="56" height="10" rx="5" fill="rgba(0,0,0,.55)"/>
+          <!-- ui: header -->
+          <rect x="36" y="58" width="90" height="10" rx="5" fill="rgba(148,233,255,.8)"/>
+          <circle cx="200" cy="63" r="5" fill="url(#holoUi)"/>
+          <!-- ui: hero card -->
+          <rect x="36" y="92" width="168" height="92" rx="14" fill="rgba(10,20,40,.7)" stroke="rgba(120,255,255,.35)" stroke-width="1"/>
+          <rect x="52" y="112" width="120" height="8" rx="4" fill="rgba(255,255,255,.75)"/>
+          <rect x="52" y="130" width="80" height="8" rx="4" fill="rgba(255,255,255,.4)"/>
+          <circle cx="180" cy="146" r="18" fill="url(#holoUi)" opacity="0.9">
+            <animate attributeName="r" values="14;20;14" dur="2.4s" repeatCount="indefinite"/>
+          </circle>
+          <!-- ui: rows -->
+          <rect x="36" y="204" width="168" height="34" rx="10" fill="rgba(10,20,40,.55)" stroke="rgba(255,255,255,.12)"/>
+          <rect x="52" y="218" width="110" height="7" rx="3.5" fill="rgba(255,255,255,.5)"/>
+          <rect x="36" y="248" width="168" height="34" rx="10" fill="rgba(10,20,40,.55)" stroke="rgba(255,255,255,.12)"/>
+          <rect x="52" y="262" width="130" height="7" rx="3.5" fill="rgba(255,255,255,.5)"/>
+          <rect x="36" y="292" width="168" height="34" rx="10" fill="rgba(10,20,40,.55)" stroke="rgba(255,255,255,.12)"/>
+          <rect x="52" y="306" width="96" height="7" rx="3.5" fill="rgba(255,255,255,.5)"/>
+          <!-- ui: equalizer -->
+          <g fill="url(#holoUi)" opacity="0.85">
+            <rect x="52" y="360" width="8" height="26" rx="4"><animate attributeName="height" values="14;30;14" dur="1.1s" repeatCount="indefinite"/><animate attributeName="y" values="376;360;376" dur="1.1s" repeatCount="indefinite"/></rect>
+            <rect x="70" y="356" width="8" height="34" rx="4"><animate attributeName="height" values="20;38;20" dur="1.4s" repeatCount="indefinite"/><animate attributeName="y" values="370;356;370" dur="1.4s" repeatCount="indefinite"/></rect>
+            <rect x="88" y="352" width="8" height="42" rx="4"><animate attributeName="height" values="26;46;26" dur="0.9s" repeatCount="indefinite"/><animate attributeName="y" values="364;352;364" dur="0.9s" repeatCount="indefinite"/></rect>
+            <rect x="106" y="358" width="8" height="30" rx="4"><animate attributeName="height" values="16;34;16" dur="1.3s" repeatCount="indefinite"/><animate attributeName="y" values="374;358;374" dur="1.3s" repeatCount="indefinite"/></rect>
+            <rect x="124" y="354" width="8" height="38" rx="4"><animate attributeName="height" values="22;40;22" dur="1.7s" repeatCount="indefinite"/><animate attributeName="y" values="368;354;368" dur="1.7s" repeatCount="indefinite"/></rect>
+          </g>
+          <!-- home indicator -->
+          <rect x="88" y="440" width="64" height="5" rx="2.5" fill="rgba(255,255,255,.45)"/>
+        </svg>
+        <div class="holo-halo"></div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="Scroll down">
+        <span class="scroll-text">SCROLL</span>
+        <span class="scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- ══════════ TICKER ══════════ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>AI-POWERED</span><span class="tick-star">✦</span>
+        <span>ZERO LATENCY</span><span class="tick-star">✦</span>
+        <span>HOLOGRAPHIC UI</span><span class="tick-star">✦</span>
+        <span>END-TO-END ENCRYPTED</span><span class="tick-star">✦</span>
+        <span>OFFLINE-FIRST</span><span class="tick-star">✦</span>
+        <span>QUANTUM SEARCH</span><span class="tick-star">✦</span>
+        <span>AI-POWERED</span><span class="tick-star">✦</span>
+        <span>ZERO LATENCY</span><span class="tick-star">✦</span>
+        <span>HOLOGRAPHIC UI</span><span class="tick-star">✦</span>
+        <span>END-TO-END ENCRYPTED</span><span class="tick-star">✦</span>
+        <span>OFFLINE-FIRST</span><span class="tick-star">✦</span>
+        <span>QUANTUM SEARCH</span><span class="tick-star">✦</span>
+      </div>
+    </div>
+
+    <!-- ══════════ ABOUT ══════════ -->
+    <section class="section about" id="about">
+      <div class="section-head reveal">
+        <p class="eyebrow">ABOUT</p>
+        <h2 class="section-title">An operating layer<br><span class="grad-text">for your entire workflow</span></h2>
+        <p class="section-sub">
+          SilkStack is not another app to juggle — it's the layer beneath every app.
+          It observes your context, learns your cadence, and assembles the right tools,
+          data and people into a single flowing interface that bends around you.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-visual reveal" data-parallax="0.06">
+          <div class="media-frame">
+            <img
+              src="https://picsum.photos/seed/silkstack-ui/900/640"
+              alt="A SilkStack holographic dashboard floating above a desk"
+              width="900" height="640" loading="lazy">
+            <div class="frame-scan" aria-hidden="true"></div>
+          </div>
+          <div class="float-chip chip-a">🧠 Neural context loaded</div>
+          <div class="float-chip chip-b">⚡ 38ms average response</div>
+          <div class="float-chip chip-c">🔒 256-bit encrypted</div>
+        </div>
+
+        <div class="about-copy reveal">
+          <h3>Built for the <span class="grad-text">velocity of thought</span></h3>
+          <p>
+            Traditional software makes you adapt to it. SilkStack adapts to you — from the
+            first second, it studies how you work and quietly starts handling the parts
+            you never wanted to do anyway.
+          </p>
+          <ul class="about-list">
+            <li><span class="li-marker">◈</span> Adaptive interface that reshapes itself around your tasks</li>
+            <li><span class="li-marker">◈</span> Real-time collaboration across 40+ devices, zero friction</li>
+            <li><span class="li-marker">◈</span> A companion AI that drafts, summarizes and schedules for you</li>
+            <li><span class="li-marker">◈</span> Works fully offline, syncs when the grid comes back</li>
+          </ul>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num" data-count="2400000" data-suffix="+">0</span>
+              <span class="stat-label">creators on board</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="38" data-prefix="" data-suffix="ms">0</span>
+              <span class="stat-label">median latency</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="99" data-suffix=".99%">0</span>
+              <span class="stat-label">uptime, last year</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ FEATURES ══════════ -->
+    <section class="section features" id="features">
+      <div class="section-head reveal">
+        <p class="eyebrow">FEATURES</p>
+        <h2 class="section-title">Everything you need.<br><span class="grad-text">Nothing you don't.</span></h2>
+        <p class="section-sub">Hover the modules. They feel the way they should.</p>
+      </div>
+
+      <div class="features-grid">
+        <article class="tilt-card reveal" data-tilt>
+          <div class="card-glow" aria-hidden="true"></div>
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 19V5m16 14V5M4 19h16M4 5h16M8 19v-6m4 6v-9m4 9V8"/></svg>
+          </div>
+          <h3>Neural Sync</h3>
+          <p>Every device, every branch, every thought — reconciled in real time. Close your laptop in Tokyo, open it in Berlin, and your flow simply continues.</p>
+          <span class="card-tag">SYNC-40×</span>
+        </article>
+
+        <article class="tilt-card reveal" data-tilt>
+          <div class="card-glow" aria-hidden="true"></div>
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M8 11h6m-3-3v6"/></svg>
+          </div>
+          <h3>Quantum Search</h3>
+          <p>Ask in plain language. "The deck where we compared vendors in March." SilkStack's semantic engine finds it faster than your muscle memory could.</p>
+          <span class="card-tag">NLP-CORE</span>
+        </article>
+
+        <article class="tilt-card reveal" data-tilt>
+          <div class="card-glow" aria-hidden="true"></div>
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.6H22l-6.2 4.5 2.4 7.6L12 17.2l-6.2 4.5 2.4-7.6L2 9.6h7.6z"/></svg>
+          </div>
+          <h3>AI Copilot</h3>
+          <p>Drafts replies, summarizes threads, generates specs and schedules your day — all from a nudge in the command bar. You approve, it executes.</p>
+          <span class="card-tag">LLM-7</span>
+        </article>
+
+        <article class="tilt-card reveal" data-tilt>
+          <div class="card-glow" aria-hidden="true"></div>
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg>
+          </div>
+          <h3>Holo Canvas</h3>
+          <p>A spatial whiteboard where ideas become objects. Pin, stack and orbit your work in 3D — then collapse it into a living document.</p>
+          <span class="card-tag">3D-ENGINE</span>
+        </article>
+
+        <article class="tilt-card reveal" data-tilt>
+          <div class="card-glow" aria-hidden="true"></div>
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 5-3 8-7 9-4-1-7-4-7-9V7z"/><path d="M9.5 12l2 2 3.5-4"/></svg>
+          </div>
+          <h3>Fortress Security</h3>
+          <p>End-to-end encryption on every byte, biometric gating, and a zero-trust backbone. Your data is yours — even our servers can't read it.</p>
+          <span class="card-tag">E2E-256</span>
+        </article>
+
+        <article class="tilt-card reveal" data-tilt>
+          <div class="card-glow" aria-hidden="true"></div>
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18h.01M12 3a9 9 0 019 9M12 3v9m9 0h-9m9 0a9 9 0 01-9 9"/></svg>
+          </div>
+          <h3>Offline-First</h3>
+          <p>Airplane mode is not a limitation. The whole workspace runs on-device and syncs the instant you're back — no conflicts, no anxiety.</p>
+          <span class="card-tag">EDGE-CACHE</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ══════════ SHOWCASE ══════════ -->
+    <section class="section showcase" id="showcase">
+      <div class="section-head reveal">
+        <p class="eyebrow">SHOWCASE</p>
+        <h2 class="section-title">See it <span class="grad-text">in motion</span></h2>
+        <p class="section-sub">A live glimpse of the SilkStack interface — press play, or just let the ambient signal wash over you.</p>
+      </div>
+
+      <div class="showcase-frame reveal" data-tilt>
+        <div class="frame-bar">
+          <span class="fb-dot red"></span><span class="fb-dot yellow"></span><span class="fb-dot green"></span>
+          <span class="fb-title">silkstack://interface</span>
+          <span class="fb-live"><span class="pulse-dot"></span> LIVE</span>
+        </div>
+        <div class="frame-screen">
+          <video id="showcaseVideo" controls preload="none"
+                 poster="https://picsum.photos/seed/silkstack-sphere/1280/720" aria-label="SilkStack interface demo video">
+            <source src="https://videos.pexels.com/video-files/34908014/34908014-hd_1920_1080_25fps.mp4" type="video/mp4">
+            <source src="https://videos.pexels.com/video-files/30064791/30064791-hd_1920_1080_25fps.mp4" type="video/mp4">
+            <source src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_1MB.mp4" type="video/mp4">
+            Your browser does not support embedded video.
+          </video>
+        </div>
+      </div>
+
+      <div class="showcase-caption reveal">
+        <p>The interface is the product. Every pixel is rendered by SilkStack's realtime engine, so what you see is what runs.</p>
+      </div>
+    </section>
+
+    <!-- ══════════ PREMIUM ══════════ -->
+    <section class="section premium" id="premium">
+      <div class="section-head reveal">
+        <p class="eyebrow">PREMIUM</p>
+        <h2 class="section-title">Unlock the <span class="grad-text">full spectrum</span></h2>
+        <p class="section-sub">Start free. Upgrade when your ambitions outgrow the default timeline.</p>
+
+        <div class="billing-toggle reveal" role="group" aria-label="Billing period">
+          <button class="bill-btn active" id="billMonthly" aria-pressed="true">Monthly</button>
+          <button class="bill-btn" id="billYearly" aria-pressed="false">Yearly <span class="save-badge">SAVE 25%</span></button>
+        </div>
+      </div>
+
+      <div class="plans">
+        <!-- Starter -->
+        <article class="plan reveal" data-tilt>
+          <div class="plan-glow" aria-hidden="true"></div>
+          <h3 class="plan-name">Starter</h3>
+          <p class="plan-desc">For solo explorers of the future.</p>
+          <p class="plan-price"><span class="price-num" data-monthly="0" data-yearly="0">$0</span><span class="price-per">/ forever</span></p>
+          <ul class="plan-feats">
+            <li>3 workspaces</li>
+            <li>1 AI Copilot session / day</li>
+            <li>Holo Canvas — read mode</li>
+            <li>Community support</li>
+            <li>512 MB encrypted cloud</li>
+          </ul>
+          <a href="#support" class="btn btn-glass plan-btn">Start free</a>
+        </article>
+
+        <!-- Pro (featured) -->
+        <article class="plan plan-featured reveal" data-tilt>
+          <div class="plan-glow" aria-hidden="true"></div>
+          <span class="plan-badge">✦ MOST CHOSEN</span>
+          <h3 class="plan-name">Pro</h3>
+          <p class="plan-desc">For teams building at light speed.</p>
+          <p class="plan-price"><span class="price-num" data-monthly="12" data-yearly="9">$12</span><span class="price-per" data-monthly="/ month" data-yearly="/ month, billed yearly">/ month</span></p>
+          <ul class="plan-feats">
+            <li>Unlimited workspaces</li>
+            <li>Unlimited AI Copilot + priority compute</li>
+            <li>Holo Canvas — full edit mode</li>
+            <li>Advanced analytics &amp; automations</li>
+            <li>100 GB encrypted cloud</li>
+            <li>Priority support, <em>48h max</em></li>
+          </ul>
+          <a href="#support" class="btn btn-primary plan-btn">Go Pro</a>
+        </article>
+
+        <!-- Enterprise -->
+        <article class="plan reveal" data-tilt>
+          <div class="plan-glow" aria-hidden="true"></div>
+          <h3 class="plan-name">Enterprise</h3>
+          <p class="plan-desc">For organisations that can't afford "almost".</p>
+          <p class="plan-price"><span class="price-num" data-monthly="custom" data-yearly="custom">Custom</span><span class="price-per">/ negotiated</span></p>
+          <ul class="plan-feats">
+            <li>Everything in Pro, plus:</li>
+            <li>SSO / SAML &amp; audit trails</li>
+            <li>Private cloud or on-prem</li>
+            <li>Dedicated success engineer</li>
+            <li>99.99% uptime SLA</li>
+          </ul>
+          <a href="#support" class="btn btn-glass plan-btn">Talk to us</a>
+        </article>
+      </div>
+
+      <p class="premium-note reveal">All prices in USD. Cancel anytime — the future doesn't hold you hostage.</p>
+    </section>
+
+    <!-- ══════════ SUPPORT ══════════ -->
+    <section class="section support" id="support">
+      <div class="section-head reveal">
+        <p class="eyebrow">SUPPORT</p>
+        <h2 class="section-title">We're <span class="grad-text">here</span> — always</h2>
+        <p class="section-sub">Answers at the speed of light. Humans at the other end.</p>
+      </div>
+
+      <div class="support-grid">
+        <!-- FAQ -->
+        <div class="faq reveal">
+          <h3 class="support-h3">Frequently asked</h3>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Is there really a free tier? <span class="faq-chev">▾</span></button>
+            <div class="faq-a"><p>Yes — the Starter plan is free forever. No credit card, no trial clock. We want you to feel the interface before we ever ask anything of you.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Which devices does SilkStack run on? <span class="faq-chev">▾</span></button>
+            <div class="faq-a"><p>Anything with a browser — Windows, macOS, Linux, iOS and Android. The Holo Canvas needs a WebGL-capable device, which is every device made after 2018.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Can I cancel my Pro plan anytime? <span class="faq-chev">▾</span></button>
+            <div class="faq-a"><p>Anytime, in two clicks, from your account dashboard. You keep full access until the end of the billing period, and your data stays exportable forever.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">How does the encryption actually work? <span class="faq-chev">▾</span></button>
+            <div class="faq-a"><p>Every payload is encrypted end-to-end with 256-bit AES keys generated on your device. We never see plaintext — even our server engineers can't read your files. Full audit log available on Enterprise.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Do you offer migration from other tools? <span class="faq-chev">▾</span></button>
+            <div class="faq-a"><p>Yes. The importer ingests Notion, Confluence, Google Docs, and raw Markdown in one click — structure, comments and all. On Pro we'll even do it for you, live, in under 48 hours.</p></div>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="contact reveal">
+          <h3 class="support-h3">Open a channel</h3>
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="field">
+              <label for="cName">Name</label>
+              <input id="cName" name="name" type="text" placeholder="Ada Lovelace" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="cEmail">Email</label>
+              <input id="cEmail" name="email" type="email" placeholder="ada@example.com" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="cMsg">Message</label>
+              <textarea id="cMsg" name="message" rows="5" placeholder="How can the future help you today?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Transmit ▸</button>
+            <p class="form-note">This demo form doesn't send anything anywhere — wire it to your own endpoint.</p>
+          </form>
+          <div class="toast" id="toast" role="status" aria-live="polite">Message received. We'll be in touch soon. ✦</div>
+
+          <div class="channels">
+            <a href="#" class="channel" aria-label="Community Discord"><span class="ch-ico">⌬</span><span><strong>Community</strong><small>Discord server</small></span></a>
+            <a href="mailto:support@silkstack.io" class="channel" aria-label="Email support"><span class="ch-ico">✉</span><span><strong>Email</strong><small>support@silkstack.io</small></span></a>
+            <a href="#" class="channel" aria-label="Documentation"><span class="ch-ico">📖</span><span><strong>Docs</strong><small>guides &amp; API reference</small></span></a>
+            <a href="#" class="channel" aria-label="System status"><span class="ch-ico">◉</span><span><strong>Status</strong><small>all systems nominal</small></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="brand">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <path fill="url(#brandGrad)" d="M16 2l12 7v14l-12 7L4 23V9z"/>
+            <circle cx="16" cy="16" r="5" fill="#04060f"/>
+          </svg>
+          <span class="brand-name">SILK<span class="brand-accent">STACK</span></span>
+        </a>
+        <p class="footer-tag">The AI-native operating layer for your work.</p>
+        <p class="footer-copy">© 2026 SilkStack Labs. Crafted beyond the edge of known time.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#features">Features</a>
+        <a href="#premium">Pricing</a>
+        <a href="#showcase">Showcase</a>
+        <a href="#">Changelog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about">About</a>
+        <a href="#">Careers</a>
+        <a href="#">Press kit</a>
+        <a href="#">Privacy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#support">Support</a>
+        <a href="#">Documentation</a>
+        <a href="#">API reference</a>
+        <a href="#">Status</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Designed in the future, rendered today.</span>
+      <span class="footer-social">
+        <a href="#" aria-label="X / Twitter">𝕏</a>
+        <a href="#" aria-label="GitHub">⌥</a>
+        <a href="#" aria-label="Discord">◈</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
