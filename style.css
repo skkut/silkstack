@@ -238,13 +238,14 @@ button { font-family: inherit; }
 .mobile-menu .btn { margin-top: 14px; }
 
 /* ---------- Hero ---------- */
+/* Hero fills the first screen; like the modules, its content starts at
+   the top (right under the fixed nav) instead of being centered. */
 .hero {
   position: relative;
   min-height: 100vh;
   min-height: 100svh;
   display: flex; flex-direction: column;
-  justify-content: center;
-  padding: 120px 28px 96px;
+  padding: 84px 28px 72px;
   overflow: hidden;
 }
 
@@ -1098,7 +1099,7 @@ button { font-family: inherit; }
   .hamburger { display: flex; }
   .about-grid, .support-grid { grid-template-columns: 1fr; }
   .section { padding: 84px 20px 44px; }
-  .hero { padding: 130px 20px 100px; }
+  .hero { padding: 84px 20px 72px; }
   .float-chip { display: none; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
