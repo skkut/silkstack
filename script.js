@@ -362,7 +362,17 @@
     });
   }
 
-  /* ───────── 15. Pause hero video off-screen ───────── */
+  /* ───────── 15. Meta theme-color sync (browser chrome) ───────── */
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+  const schemeMQ = window.matchMedia("(prefers-color-scheme: dark)");
+  const syncThemeColor = () => {
+    if (!themeColorMeta) return;
+    themeColorMeta.setAttribute("content", schemeMQ.matches ? "#04060f" : "#eef2f9");
+  };
+  schemeMQ.addEventListener?.("change", syncThemeColor);
+  syncThemeColor();
+
+  /* ───────── 16. Pause hero video off-screen ───────── */
   const heroVideo = document.getElementById("heroVideo");
   const hero = document.getElementById("home");
   if (heroVideo && hero) {
