@@ -351,7 +351,7 @@ button { font-family: inherit; }
 .holo {
   position: relative; z-index: 4;
   grid-area: win;
-  width: min(340px, 24vw);
+  width: min(400px, 28vw);
   perspective: 900px;
 }
 .appwin {
