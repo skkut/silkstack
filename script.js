@@ -293,43 +293,7 @@
     });
   }
 
-  /* ───────── 11. FAQ accordion ───────── */
-  const faqQs = document.querySelectorAll(".faq-q");
-  faqQs.forEach((q) => {
-    q.addEventListener("click", () => {
-      const item = q.closest(".faq-item");
-      const isOpen = item.classList.contains("open");
-      // close siblings
-      item.parentElement.querySelectorAll(".faq-item.open").forEach((o) => {
-        o.classList.remove("open");
-        o.querySelector(".faq-q").setAttribute("aria-expanded", "false");
-      });
-      if (!isOpen) {
-        item.classList.add("open");
-        q.setAttribute("aria-expanded", "true");
-      }
-    });
-  });
-
-  /* ───────── 12. Contact form (demo) ───────── */
-  const form = document.getElementById("contactForm");
-  const toast = document.getElementById("toast");
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      form.reset();
-      if (toast) {
-        toast.classList.add("show");
-        setTimeout(() => toast.classList.remove("show"), 3800);
-      }
-    });
-  }
-
-  /* ───────── 13. Cursor glow ───────── */
+  /* ───────── 11. Cursor glow ───────── */
   const glow = document.querySelector(".cursor-glow");
   if (glow && !COARSE && !REDUCED) {
     let gx = -1000, gy = -1000, tx = gx, ty = gy, running = false;
@@ -346,7 +310,7 @@
     }, { passive: true });
   }
 
-  /* ───────── 14. Magnetic buttons ───────── */
+  /* ───────── 12. Magnetic buttons ───────── */
   const magnetBtns = document.querySelectorAll(".magnetic");
   if (magnetBtns.length && !COARSE && !REDUCED) {
     magnetBtns.forEach((btn) => {
@@ -362,7 +326,7 @@
     });
   }
 
-  /* ───────── 15. Meta theme-color sync (browser chrome) ───────── */
+  /* ───────── 13. Meta theme-color sync (browser chrome) ───────── */
   const themeColorMeta = document.querySelector('meta[name="theme-color"]');
   const schemeMQ = window.matchMedia("(prefers-color-scheme: dark)");
   const syncThemeColor = () => {
@@ -372,7 +336,7 @@
   schemeMQ.addEventListener?.("change", syncThemeColor);
   syncThemeColor();
 
-  /* ───────── 16. Lightbox ───────── */
+  /* ───────── 14. Lightbox ───────── */
   const lightbox = document.getElementById("lightbox");
   if (lightbox) {
     const lbImg = lightbox.querySelector(".lightbox-img");

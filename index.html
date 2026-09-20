@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>SilkStack Image Browser — Offline AI Search for ComfyUI</title>
-  <meta name="description" content="Free, open-source local image browser with on-device AI: semantic search by meaning, auto-tagging and similarity stacks for your ComfyUI images — all offline.">
-  <meta name="keywords" content="comfyui image browser, local ai image search, semantic image search, ai image auto tagging, offline image organizer, search local images by prompt, comfyui generated images, ai image organizer">
+  <title>SilkStack Image Browser — Local AI Image Viewer for ComfyUI</title>
+  <meta name="description" content="Free, offline AI image viewer and organizer for ComfyUI and Stable Diffusion. Search by prompt or meaning, auto-tag and stack similar images — all local.">
+  <meta name="keywords" content="ai image viewer, image viewer for ai images, comfyui image viewer, stable diffusion image viewer, ai image organizer, local image gallery, offline image viewer, ai art browser, search ai images by prompt, semantic image search, ai image auto tagging, thumbnail grid, free open source image viewer">
   <meta name="theme-color" content="#eef2f9">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta name="author" content="Saravana (skkut)">
@@ -16,21 +16,21 @@
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SilkStack Image Browser">
-  <meta property="og:title" content="SilkStack Image Browser — Offline AI Search for ComfyUI">
-  <meta property="og:description" content="A free, open-source local image browser with on-device AI. Search your ComfyUI images by meaning, auto-tag them with a local LLM and stack near-identical generations — offline and private.">
+  <meta property="og:title" content="SilkStack Image Browser — Local AI Image Viewer for ComfyUI">
+  <meta property="og:description" content="A free, offline AI image viewer and organizer. Browse ComfyUI and Stable Diffusion images, search by prompt or meaning, auto-tag them with a local LLM and stack near-identical generations — no cloud.">
   <meta property="og:url" content="https://skkut.github.io/silkstack/">
   <meta property="og:image" content="https://skkut.github.io/silkstack/assets/ai-semantic-search.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="2048">
   <meta property="og:image:height" content="1102">
-  <meta property="og:image:alt" content="SilkStack Image Browser showing semantic search and the AI intelligence panel">
+  <meta property="og:image:alt" content="SilkStack AI image viewer showing local semantic search and the AI intelligence panel">
   <meta property="og:locale" content="en_US">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SilkStack Image Browser — Offline AI Search for ComfyUI">
-  <meta name="twitter:description" content="A free, open-source local image browser with on-device AI. Search your ComfyUI images by meaning, auto-tag them with a local LLM and stack near-identical generations — offline and private.">
+  <meta name="twitter:title" content="SilkStack Image Browser — Local AI Image Viewer for ComfyUI">
+  <meta name="twitter:description" content="A free, offline AI image viewer and organizer. Browse ComfyUI and Stable Diffusion images, search by prompt or meaning, auto-tag them with a local LLM and stack near-identical generations — no cloud.">
   <meta name="twitter:image" content="https://skkut.github.io/silkstack/assets/ai-semantic-search.jpg">
-  <meta name="twitter:image:alt" content="SilkStack Image Browser showing semantic search and the AI intelligence panel">
+  <meta name="twitter:image:alt" content="SilkStack AI image viewer showing local semantic search and the AI intelligence panel">
 
   <script type="application/ld+json">
   {
@@ -38,10 +38,10 @@
     "@type": "SoftwareApplication",
     "name": "SilkStack Image Browser",
     "alternateName": "SilkStack",
-    "description": "A local image browser for AI-generated images with on-device AI: semantic search by meaning, LLM auto-tagging and similarity stacks. Reads prompt, model, seed and workflow metadata out of ComfyUI, Automatic1111, InvokeAI, Midjourney and other AI image files — entirely offline.",
+    "description": "A local image viewer, browser and organizer for AI-generated images with on-device AI: semantic search by meaning, LLM auto-tagging and similarity stacks. Reads prompt, model, seed and workflow metadata out of ComfyUI, Stable Diffusion (Automatic1111 / Forge / Fooocus / SD.Next), InvokeAI, Midjourney and other AI image files — entirely offline.",
     "url": "https://skkut.github.io/silkstack/",
     "applicationCategory": "MultimediaApplication",
-    "applicationSubCategory": "Image organizer",
+    "applicationSubCategory": "AI image viewer and organizer",
     "operatingSystem": "Windows, macOS, Linux",
     "softwareVersion": "2.3.0",
     "softwareRequirements": "Electron desktop app; a WebGPU-capable GPU for local AI features",
@@ -49,23 +49,35 @@
     "isAccessibleForFree": true,
     "downloadUrl": "https://github.com/skkut/SilkStack-Image-Browser/releases",
     "softwareHelp": "https://github.com/skkut/SilkStack-Image-Browser/tree/main/docs",
-    "keywords": "ComfyUI generated images, local AI image search, semantic image search, AI image auto-tagging, offline image organizer, search local images by prompt",
+    "keywords": "AI image viewer, image browser for AI images, ComfyUI image viewer, Stable Diffusion image viewer, AI image organizer, local image gallery, offline image viewer, search AI images by prompt, semantic image search, AI image auto-tagging, thumbnail grid, free open-source desktop image viewer",
     "inLanguage": "en",
+    "author": {
+      "@type": "Person",
+      "name": "Saravana (skkut)",
+      "url": "https://github.com/skkut"
+    },
+    "sameAs": [
+      "https://github.com/skkut/SilkStack-Image-Browser",
+      "https://github.com/skkut/SilkStack-Image-Browser/releases"
+    ],
     "screenshot": [
       "https://skkut.github.io/silkstack/assets/ai-semantic-search.jpg",
       "https://skkut.github.io/silkstack/assets/ai-similarity-stacks.jpg",
       "https://skkut.github.io/silkstack/assets/screenshot-hero-grid.webp"
     ],
     "featureList": [
+      "Local AI image viewer and organizer — browse AI-generated images entirely offline",
       "Semantic search — find images by meaning, not just keywords",
       "AI auto-tagging with a local LLM (up to 15 tags per image)",
       "Similarity stacks with vector grouping and prompt variation highlighting",
-      "Universal metadata parsing for ComfyUI, Automatic1111, InvokeAI, Midjourney, DALL·E 3, Firefly and more",
-      "Adaptive grid with smooth scrolling for 100,000+ images",
+      "Universal metadata parsing for ComfyUI, Stable Diffusion (Automatic1111 / Forge / Fooocus / SD.Next), InvokeAI, Midjourney, DALL·E 3, Firefly and more",
+      "Adaptive thumbnail grid with smooth scrolling for 100,000+ images",
+      "Indexes MP4, WEBM and GIF files alongside images, with playback and thumbnails",
       "Auto-watch folders and live indexing",
-      "Search by prompt, model, seed, steps, CFG and sampler",
+      "Search by prompt, model, seed, steps, CFG and sampler — filter by aspect ratio, sort by date, name or relevance",
       "Drag and drop images back into ComfyUI to reload their workflow",
-      "100% local and offline — no accounts and no cloud"
+      "Runs on Windows, macOS and Linux from a single free download",
+      "100% local and offline — no accounts, no cloud and no telemetry"
     ],
     "offers": {
       "@type": "Offer",
@@ -73,87 +85,6 @@
       "priceCurrency": "USD",
       "description": "The full image browser is free and open source (MPL-2.0). The optional local AI features are unlocked with a one-time premium license."
     }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is my data sent anywhere?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. SilkStack Image Browser runs entirely on your machine — no accounts, no cloud, no telemetry. Indexing, search and all of the AI features run locally on your own GPU. The only network access is the one-time download of AI model files."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is semantic search?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Semantic search matches meaning instead of words. You describe an image loosely — a girl with a puppy in a palace — and SilkStack finds images whose prompts mean the same thing, even when they share almost no words, and even across languages. Results are merged with your normal keyword results: semantic hits come first, keyword-only matches are appended."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I search my local images by prompt, model or seed?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. SilkStack indexes the metadata inside every image in your library, so you can search your local images by the prompt, model, seed, workflow and tags that generated them — all offline."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Which AI tools does it support?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ComfyUI, Automatic1111 / Forge / Fooocus / SD.Next, InvokeAI, SwarmUI, Easy Diffusion, Midjourney, Niji, DALL·E 3, Adobe Firefly, DreamStudio and Draw Things — around 100+ ComfyUI node types, and it keeps growing."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What hardware do I need for the AI features?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A GPU that supports WebGPU, with enough VRAM for the model you choose — roughly 1.5 GB for Qwen3-Embedding 0.6B up to 6.9 GB for the 8B model, with Arctic Embed S/M as lighter options. The footer pill shows how much VRAM the loaded models need and an Eject button hands the memory straight back. Without WebGPU, auto-tagging falls back to a rule-based engine so you still get tags."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How big are the AI models, and do I need an internet connection?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Models are downloaded once from Hugging Face and cached on disk — around 2 GB for the default embedding model, up to roughly 4 GB for the 8B one. After that everything runs offline. Settings → AI Intelligence lists every cached model with its size and lets you delete individual models to reclaim disk space."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I turn the AI features off?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. A single toggle in the top bar switches off model loading, semantic search and auto-tagging, so SilkStack stays completely out of your GPU while you are generating. Nothing is deleted — turn it back on and your index is still there."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does the Premium license work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "One-time purchase, no subscription. Activation is a license key, and it supports offline activation with manual key entry, so it works even behind strict firewalls or on machines without internet."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is it really open source?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes — the browser itself is MPL-2.0 and lives on GitHub. Only the optional AI intelligence module (the premium feature pack) is closed-source and license-gated."
-        }
-      }
-    ]
   }
   </script>
 
@@ -228,13 +159,13 @@
         </p>
         <h1 class="hero-title">
           Every AI image you've ever made.<br>
-          <span class="typed-wrap">local, private and <span class="typed" id="typed"></span></span>
+          <span class="typed-wrap">local, private and <span class="typed" id="typed">searchable.</span></span>
         </h1>
         <p class="hero-sub">
-          A beautiful, blazing-fast image browser built for ComfyUI-generated images — and beyond.
-          It reads the prompt, model, seed and workflow right out of your files, then adds
-          on-device AI: semantic search that finds images by meaning, automatic tagging and
-          similarity stacks. No accounts. No cloud. Everything on your machine.
+          A free, local image viewer and organizer for AI-generated images — built for ComfyUI,
+          Stable Diffusion and A1111 workflows. It reads the prompt, model, seed and workflow
+          from your files, then adds on-device AI: semantic search, auto-tagging and similarity
+          stacks. No accounts. No cloud. Everything on your machine.
         </p>
 
         <div class="hero-cta">
@@ -243,7 +174,9 @@
         </div>
 
         <div class="hero-trust">
-          <span>✦ Built for AI artists</span>
+          <span>✦ Free image viewer for AI artists</span>
+          <span class="trust-sep">·</span>
+          <span>Windows, macOS &amp; Linux</span>
           <span class="trust-sep">·</span>
           <span>MPL-2.0 open source</span>
           <span class="trust-sep">·</span>
@@ -300,11 +233,12 @@
     <section class="section about" id="about">
       <div class="section-head reveal">
         <p class="eyebrow">ABOUT</p>
-        <h2 class="section-title">Your generation history,<br><span class="grad-text">turned into a library</span></h2>
+        <h2 class="section-title">Your generation history,<br><span class="grad-text">turned into a searchable gallery</span></h2>
         <p class="section-sub">
           Every AI artist accumulates thousands of images — with their secrets hidden in the metadata.
-          SilkStack Image Browser reads those secrets and turns your output folders into a searchable,
-          taggable, beautifully rendered library. All offline, all on your machine.
+          SilkStack Image Browser is a local image viewer and organizer that reads those secrets and
+          turns your output folders into a searchable, taggable, beautifully rendered library.
+          All offline, all on your machine.
         </p>
       </div>
 
@@ -314,7 +248,7 @@
             <a class="lightbox-trigger" href="assets/screenshot-gallery.webp" data-cap="The library — Adaptive Grid view" aria-label="Open screenshot in a lightbox">
               <img
                 src="assets/screenshot-gallery.webp"
-                alt="SilkStack Image Browser gallery grid showing AI-generated images with metadata"
+                alt="SilkStack AI image viewer showing a thumbnail grid of AI-generated images with their metadata"
                 width="900" height="640" loading="lazy">
             </a>
             <div class="frame-scan" aria-hidden="true"></div>
@@ -333,9 +267,10 @@
             library you can actually live in.
           </p>
           <ul class="about-list">
-            <li><span class="li-marker">◈</span> Deep metadata parsing: ComfyUI, A1111 / Forge / Fooocus / SD.Next, InvokeAI, SwarmUI, Midjourney, DALL·E 3, Firefly, DreamStudio, Draw Things</li>
+            <li><span class="li-marker">◈</span> Deep metadata parsing: ComfyUI, Stable Diffusion (A1111 / Forge / Fooocus / SD.Next), InvokeAI, SwarmUI, Midjourney, DALL·E 3, Firefly, DreamStudio, Draw Things</li>
             <li><span class="li-marker">◈</span> Automatic folder watching — new generations appear live while you wait</li>
-            <li><span class="li-marker">◈</span> Search by prompt text, model, steps, CFG, sampler, seed — plus portrait / landscape / square filters</li>
+            <li><span class="li-marker">◈</span> Search by prompt text, model, steps, CFG, sampler, seed — then sort by date, name or relevance and filter by portrait / landscape / square</li>
+            <li><span class="li-marker">◈</span> Images, MP4 / WEBM video and animated GIFs, side by side in one thumbnail grid</li>
             <li><span class="li-marker">◈</span> Drag an image straight back into ComfyUI to reload its prompt and workflow</li>
           </ul>
           <div class="about-stats">
@@ -360,8 +295,8 @@
     <section class="section features" id="features">
       <div class="section-head reveal">
         <p class="eyebrow">FEATURES</p>
-        <h2 class="section-title">Everything your library<br><span class="grad-text">has been missing</span></h2>
-        <p class="section-sub">Hover the modules. They feel the way they should.</p>
+        <h2 class="section-title">Everything your AI image<br><span class="grad-text">library has been missing</span></h2>
+        <p class="section-sub">Six things a local AI image viewer has to get right — hover them, they feel the way they should.</p>
       </div>
 
       <div class="features-grid">
@@ -371,7 +306,7 @@
             <svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg>
           </div>
           <h3>Universal Metadata</h3>
-          <p>Parses prompt, model, steps, CFG, sampler, seed and workflows from ComfyUI, A1111, InvokeAI, Midjourney, DALL·E 3, Firefly and more — even from WebP.</p>
+          <p>Parses prompt, model, steps, CFG, sampler, seed and workflows from ComfyUI, Stable Diffusion (A1111, Forge, Fooocus), InvokeAI, Midjourney, DALL·E 3, Firefly and more — even from WebP.</p>
           <span class="card-tag">11+ TOOLS</span>
         </article>
 
@@ -381,7 +316,7 @@
             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
           </div>
           <h3>Adaptive Grid</h3>
-          <p>A beautiful image grid that auto-adjusts to every image's aspect ratio, with buttery smooth scrolling — even when your folder holds 100,000 generations.</p>
+          <p>A beautiful thumbnail grid that auto-adjusts to every image's aspect ratio, with buttery smooth scrolling — even when your folder holds 100,000 generations, videos and GIFs included.</p>
           <span class="card-tag">SMOOTH-SCROLL</span>
         </article>
 
@@ -401,7 +336,7 @@
             <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M8 11h6m-3-3v6"/></svg>
           </div>
           <h3>Search &amp; Filters</h3>
-          <p>Find anything by prompt text, model, steps, CFG, sampler or seed — or switch on semantic search and find it by meaning. Filter by portrait, landscape or square. Your full history, queried in a keystroke.</p>
+          <p>Find anything by prompt text, model, steps, CFG, sampler or seed — or switch on semantic search and find it by meaning. Filter by portrait, landscape or square; sort by date, name or relevance. Your full history, queried in a keystroke.</p>
           <span class="card-tag">CTRL+K</span>
         </article>
 
@@ -421,7 +356,7 @@
             <svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg>
           </div>
           <h3>Tags &amp; Collections</h3>
-          <p>LLM auto-tags plus your own manual tags, similarity stacks that group near-identical generations, collections, folders with emoji icons, and removable drives — including encrypted ones.</p>
+          <p>LLM auto-tags plus your own manual tags, similarity stacks that group near-identical and duplicate generations, collections, folders with emoji icons, and removable drives — including encrypted ones.</p>
           <span class="card-tag">LIBRARY-OS</span>
         </article>
       </div>
@@ -453,7 +388,7 @@
         <div class="frame-screen frame-natural">
           <a class="lightbox-trigger" href="assets/ai-semantic-search.jpg" data-cap="Semantic search — describe an image loosely, find the ones that mean the same thing" aria-label="Open the semantic search screenshot in a lightbox">
             <img src="assets/ai-semantic-search.jpg"
-                 alt="SilkStack Image Browser using local semantic search to find AI-generated images by meaning, with the AI intelligence panel visible"
+                 alt="SilkStack image viewer using local semantic search to find AI-generated images by meaning, with the AI intelligence panel visible"
                  width="2048" height="1102" loading="lazy" decoding="async">
           </a>
         </div>
@@ -498,7 +433,7 @@
           <div class="media-frame frame-fit">
             <a class="lightbox-trigger" href="assets/ai-similarity-stacks.jpg" data-cap="Prompt variation highlighting inside a similarity stack" aria-label="Open the similarity stack screenshot in a lightbox">
               <img src="assets/ai-similarity-stacks.jpg"
-                   alt="A SilkStack similarity stack showing several images generated from similar prompts with the differing prompt words highlighted"
+                   alt="A SilkStack similarity stack grouping near-duplicate AI generations from similar prompts, with the differing prompt words highlighted"
                    width="2048" height="1102" loading="lazy" decoding="async">
             </a>
             <div class="frame-scan" aria-hidden="true"></div>
@@ -559,7 +494,7 @@
           <div class="media-frame frame-fit">
             <a class="lightbox-trigger" href="assets/ai-model-management.jpg" data-cap="Settings → AI Intelligence — every cached model, its size, and a delete button" aria-label="Open the AI model management screenshot in a lightbox">
               <img src="assets/ai-model-management.jpg"
-                   alt="SilkStack AI Intelligence settings listing every cached local AI model with its size and a delete button"
+                   alt="SilkStack AI Intelligence settings listing every cached local AI model with its size and a delete button, on a fully offline desktop image viewer"
                    width="1127" height="1013" loading="lazy" decoding="async">
             </a>
             <div class="frame-scan" aria-hidden="true"></div>
@@ -593,7 +528,7 @@
         <div class="frame-screen">
           <a class="lightbox-trigger" href="assets/screenshot-imagemodal.webp" data-cap="The detail view — full image with the prompt metadata panel" aria-label="Open screenshot in a lightbox">
             <img src="assets/screenshot-imagemodal.webp"
-                 alt="SilkStack Image Browser full-image view with prompt metadata panel"
+                 alt="SilkStack image viewer showing a full-size AI-generated image next to its prompt and model metadata panel"
                  width="1280" height="720" loading="lazy">
           </a>
         </div>
@@ -601,15 +536,15 @@
 
       <div class="shot-strip reveal">
         <a href="assets/screenshot-hero-grid.webp" class="shot lightbox-trigger" data-cap="The grid" aria-label="Open grid screenshot in a lightbox">
-          <img src="assets/screenshot-hero-grid.webp" alt="SilkStack Image Browser grid of ComfyUI-generated images" loading="lazy" width="640" height="400">
+          <img src="assets/screenshot-hero-grid.webp" alt="SilkStack image browser showing a thumbnail grid of ComfyUI-generated images" loading="lazy" width="640" height="400">
           <span class="shot-cap">The grid</span>
         </a>
         <a href="assets/screenshot-gallery.webp" class="shot lightbox-trigger" data-cap="The library" aria-label="Open gallery screenshot in a lightbox">
-          <img src="assets/screenshot-gallery.webp" alt="SilkStack Image Browser local image library gallery view" loading="lazy" width="640" height="400">
+          <img src="assets/screenshot-gallery.webp" alt="SilkStack local image gallery view of an AI art library" loading="lazy" width="640" height="400">
           <span class="shot-cap">The library</span>
         </a>
         <a href="assets/screenshot-imagemodal.webp" class="shot lightbox-trigger" data-cap="The detail view" aria-label="Open image detail screenshot in a lightbox">
-          <img src="assets/screenshot-imagemodal.webp" alt="SilkStack Image Browser image detail view" loading="lazy" width="640" height="400">
+          <img src="assets/screenshot-imagemodal.webp" alt="SilkStack image viewer detail view with the prompt panel open" loading="lazy" width="640" height="400">
           <span class="shot-cap">The detail view</span>
         </a>
       </div>
@@ -632,7 +567,7 @@
         <article class="plan reveal" data-tilt>
           <div class="plan-glow" aria-hidden="true"></div>
           <h3 class="plan-name">Community</h3>
-          <p class="plan-desc">The complete browser, free forever.</p>
+          <p class="plan-desc">The complete browser, free forever. One download to install — no account, no subscription.</p>
           <p class="plan-price"><span class="price-num">$0</span><span class="price-per">/ forever · MPL-2.0</span></p>
           <ul class="plan-feats">
             <li>Universal metadata parsing (11+ tools)</li>
@@ -672,79 +607,26 @@
     <section class="section support" id="support">
       <div class="section-head reveal">
         <p class="eyebrow">SUPPORT</p>
-        <h2 class="section-title">Questions, <span class="grad-text">answered</span></h2>
-        <p class="section-sub">Open source means open ears. Get help, report bugs, or shape the roadmap.</p>
+        <h2 class="section-title">Bugs, ideas and <span class="grad-text">questions</span></h2>
+        <p class="section-sub">SilkStack is built in the open. GitHub Issues is the one place everything is tracked — bug reports, feature requests and setup or licensing questions alike — so nothing gets lost and everyone can search the answer.</p>
       </div>
 
-      <div class="support-grid">
-        <!-- FAQ -->
-        <div class="faq reveal">
-          <h3 class="support-h3">Frequently asked</h3>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Is my data sent anywhere? <span class="faq-chev">▾</span></button>
-            <div class="faq-a"><p>No. SilkStack Image Browser runs entirely on your machine — no accounts, no cloud, no telemetry. Indexing, search and all of the AI features run locally on your own GPU. The only network access is the one-time download of AI model files.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">What is semantic search? <span class="faq-chev">▾</span></button>
-            <div class="faq-a"><p>Semantic search matches meaning instead of words. You describe an image loosely — a girl with a puppy in a palace — and SilkStack finds images whose prompts mean the same thing, even when they share almost no words, and even across languages. Results are merged with your normal keyword results: semantic hits come first, keyword-only matches are appended.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Can I search my local images by prompt, model or seed? <span class="faq-chev">▾</span></button>
-            <div class="faq-a"><p>Yes. SilkStack indexes the metadata inside every image in your library, so you can search your local images by the prompt, model, seed, workflow and tags that generated them — all offline.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Which AI tools does it support? <span class="faq-chev">▾</span></button>
-            <div class="faq-a"><p>ComfyUI, Automatic1111 / Forge / Fooocus / SD.Next, InvokeAI, SwarmUI, Easy Diffusion, Midjourney, Niji, DALL·E 3, Adobe Firefly, DreamStudio and Draw Things — around 100+ ComfyUI node types, and it keeps growing.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">What hardware do I need for the AI features? <span class="faq-chev">▾</span></button>
-            <div class="faq-a"><p>A GPU that supports WebGPU, with enough VRAM for the model you choose — roughly 1.5 GB for Qwen3-Embedding 0.6B up to 6.9 GB for the 8B model, with Arctic Embed S/M as lighter options. The footer pill shows how much VRAM the loaded models need and an Eject button hands the memory straight back. Without WebGPU, auto-tagging falls back to a rule-based engine so you still get tags.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">How big are the AI models, and do I need an internet connection? <span class="faq-chev">▾</span></button>
-            <div class="faq-a"><p>Models are downloaded once from Hugging Face and cached on disk — around 2 GB for the default embedding model, up to roughly 4 GB for the 8B one. After that everything runs offline. Settings → AI Intelligence lists every cached model with its size and lets you delete individual models to reclaim disk space.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Can I turn the AI features off? <span class="faq-chev">▾</span></button>
-            <div class="faq-a"><p>Yes. A single toggle in the top bar switches off model loading, semantic search and auto-tagging, so SilkStack stays completely out of your GPU while you are generating. Nothing is deleted — turn it back on and your index is still there.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">How does the Premium license work? <span class="faq-chev">▾</span></button>
-            <div class="faq-a"><p>One-time purchase, no subscription. Activation is a license key, and it supports offline activation with manual key entry, so it works even behind strict firewalls or on machines without internet.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Is it really open source? <span class="faq-chev">▾</span></button>
-            <div class="faq-a"><p>Yes — the browser itself is MPL-2.0 and lives on GitHub. Only the optional AI intelligence module (the premium feature pack) is closed-source and license-gated.</p></div>
-          </div>
-        </div>
-
-        <!-- Contact -->
-        <div class="contact reveal">
-          <h3 class="support-h3">Reach the team</h3>
-          <form id="contactForm" class="contact-form" novalidate>
-            <div class="field">
-              <label for="cName">Name</label>
-              <input id="cName" name="name" type="text" placeholder="Ada Lovelace" required autocomplete="name">
+      <div class="issue-card reveal">
+        <div class="support-grid">
+          <div class="issue-main">
+            <span class="issue-ico" aria-hidden="true">⚠</span>
+            <h3 class="issue-h3">Open an issue on GitHub</h3>
+            <p class="issue-copy">Tell us what happened and we'll take it from there. It's the fastest route to a fix, and there's no form to fill in — just a title and a description.</p>
+            <div class="issue-actions">
+              <a href="https://github.com/skkut/SilkStack-Image-Browser/issues/new" class="btn btn-primary" target="_blank" rel="noopener">New issue <span class="btn-arrow">→</span></a>
+              <a href="https://github.com/skkut/SilkStack-Image-Browser/issues" class="btn btn-ghost" target="_blank" rel="noopener">Browse existing issues</a>
             </div>
-            <div class="field">
-              <label for="cEmail">Email</label>
-              <input id="cEmail" name="email" type="email" placeholder="ada@example.com" required autocomplete="email">
-            </div>
-            <div class="field">
-              <label for="cMsg">Message</label>
-              <textarea id="cMsg" name="message" rows="5" placeholder="How can the library help you today?" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Transmit ▸</button>
-            <p class="form-note">This demo form doesn't send anything anywhere — wire it to your own endpoint, or use GitHub Issues.</p>
-          </form>
-          <div class="toast" id="toast" role="status" aria-live="polite">Message received. We'll be in touch soon. ✦</div>
-
-          <div class="channels">
-            <a href="https://github.com/skkut/SilkStack-Image-Browser/issues" class="channel" target="_blank" rel="noopener" aria-label="Report issues on GitHub"><span class="ch-ico">⚠</span><span><strong>Issues</strong><small>bugs &amp; feature requests</small></span></a>
-            <a href="https://github.com/skkut/SilkStack-Image-Browser/releases" class="channel" target="_blank" rel="noopener" aria-label="Download releases"><span class="ch-ico">⬇</span><span><strong>Releases</strong><small>downloads &amp; changelog</small></span></a>
-            <a href="https://github.com/skkut/SilkStack-Image-Browser/tree/main/docs" class="channel" target="_blank" rel="noopener" aria-label="Read the documentation"><span class="ch-ico">📖</span><span><strong>Docs</strong><small>stacking, auto-tagging &amp; more</small></span></a>
-            <a href="https://github.com/skkut/SilkStack-Image-Browser/blob/main/LICENSE" class="channel" target="_blank" rel="noopener" aria-label="View the license"><span class="ch-ico">◉</span><span><strong>License</strong><small>MPL-2.0 open source</small></span></a>
           </div>
+          <ul class="about-list issue-hints">
+            <li><span class="li-marker">◈</span><strong>Bug?</strong> Include your OS, the SilkStack version and the file or generator that misbehaved.</li>
+            <li><span class="li-marker">◈</span><strong>Idea?</strong> Describe the workflow you want to speed up — that is what shapes the roadmap.</li>
+            <li><span class="li-marker">◈</span><strong>License or billing?</strong> Open an issue too, but never paste an activation key into a public thread.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -758,7 +640,7 @@
           <img class="brand-mark" src="assets/silkstack-128.png" alt="" width="30" height="30">
           <span class="brand-name">SILK<span class="brand-accent">STACK</span></span>
         </a>
-        <p class="footer-tag">The local image browser for AI-generated art — with on-device AI search, tagging and stacking. No accounts, no cloud.</p>
+        <p class="footer-tag">The free local image viewer and organizer for AI-generated art. Runs on Windows, macOS and Linux with on-device AI search, tagging and stacking — no accounts, no cloud.</p>
         <p class="footer-copy">© 2026 SilkStack Image Browser · Built by Saravana (skkut) with AI &amp; vibe coding · MPL-2.0</p>
       </div>
       <div class="footer-col">

@@ -1,9 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!--
+  One page, six screenshots. The image: entries are Google's image-sitemap
+  extension: they give each screenshot a keyword-bearing title and caption so
+  the app UI can surface in Google Images for "comfyui image viewer" and
+  similar screenshot-seeking queries. Keep every <image:loc> pointing at a file
+  that is actually referenced by index.html.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://skkut.github.io/silkstack/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+
+    <image:image>
+      <image:loc>https://skkut.github.io/silkstack/assets/screenshot-hero-grid.webp</image:loc>
+      <image:title>SilkStack image browser — thumbnail grid of ComfyUI-generated images</image:title>
+      <image:caption>An adaptive thumbnail grid of AI-generated images, each with its prompt, model and seed already parsed.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://skkut.github.io/silkstack/assets/screenshot-gallery.webp</image:loc>
+      <image:title>SilkStack local image gallery for AI art</image:title>
+      <image:caption>A local image gallery and organizer showing an AI art library with folders, tags and collections.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://skkut.github.io/silkstack/assets/screenshot-imagemodal.webp</image:loc>
+      <image:title>SilkStack image viewer with the prompt metadata panel</image:title>
+      <image:caption>The full-size image viewer, with the prompt, negative prompt, model, sampler and seed panel open.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://skkut.github.io/silkstack/assets/ai-semantic-search.jpg</image:loc>
+      <image:title>Local semantic search for AI images in SilkStack</image:title>
+      <image:caption>On-device semantic search finding AI-generated images by meaning instead of exact keywords.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://skkut.github.io/silkstack/assets/ai-similarity-stacks.jpg</image:loc>
+      <image:title>Similarity stacks grouping near-duplicate AI generations</image:title>
+      <image:caption>Similarity stacks grouping near-identical generations, highlighting the prompt words that differ.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://skkut.github.io/silkstack/assets/ai-model-management.jpg</image:loc>
+      <image:title>Offline AI model management in SilkStack</image:title>
+      <image:caption>Local AI model management, with each cached model's size and VRAM listed for fully offline use.</image:caption>
+    </image:image>
   </url>
 </urlset>
