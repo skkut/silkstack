@@ -580,8 +580,15 @@ button { font-family: inherit; }
 .about-copy > p { margin-top: 14px; color: var(--text-dim); font-weight: 300; }
 
 .about-list { list-style: none; margin-top: 22px; display: grid; gap: 10px; }
-.about-list li { display: flex; gap: 12px; align-items: baseline; color: var(--text-dim); font-size: 15.5px; }
-.li-marker { color: var(--cyan-soft); text-shadow: 0 0 10px rgba(2, 132, 199, 0.5); font-size: 12px; }
+/* The marker is positioned out of flow rather than being a flex item, so a
+   list item can hold inline markup (<strong>, <em>, links) and still wrap
+   as one paragraph instead of each child becoming its own column. */
+.about-list li { position: relative; padding-left: 24px; color: var(--text-dim); font-size: 15.5px; }
+.li-marker {
+  position: absolute; left: 0; top: 0.24em;
+  color: var(--cyan-soft); text-shadow: 0 0 10px rgba(2, 132, 199, 0.5); font-size: 12px;
+}
+.about-list li strong { color: var(--text); font-weight: 500; }
 
 .about-stats {
   margin-top: 28px;
@@ -1090,6 +1097,33 @@ button { font-family: inherit; }
 }
 .footer-social a:hover { border-color: var(--stroke-bright); color: var(--cyan-soft); box-shadow: var(--glow-cyan); transform: translateY(-3px); }
 
+/* ---------- AI section ---------- */
+/* Teaser link under a grid, pointing at the AI section */
+.section-link { margin-top: 34px; text-align: center; }
+.section-link a {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--font-display);
+  font-size: 12.5px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--cyan-soft);
+  padding-bottom: 5px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.section-link a:hover { color: var(--violet-soft); border-bottom-color: var(--stroke-bright); }
+.section-link a:hover .btn-arrow { transform: translateX(4px); }
+
+.ai-grid { margin-top: 26px; }
+.ai-block { margin-top: 62px; }
+
+/* Screenshots that must be read whole (settings lists, stack rows, annotated
+   UI shots) are shown at their own ratio instead of being cropped. */
+.media-frame.frame-fit img,
+.frame-screen.frame-natural img {
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1080px) {
   .holo { display: none; }
@@ -1105,6 +1139,7 @@ button { font-family: inherit; }
   .hero { padding: 120px 20px 72px; }
   .float-chip { display: none; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .ai-block { margin-top: 46px; }
 }
 
 /* Below ~760px the uppercase headline can wrap to a second line, so
@@ -1122,6 +1157,13 @@ button { font-family: inherit; }
   .hero-cta .btn { width: 100%; }
   .about-stats { gap: 26px; }
   .stat-num { font-size: 27px; }
+  /* Keep the window-chrome bar on one line on narrow screens */
+  .frame-bar { padding: 11px 14px; gap: 6px; }
+  .fb-title {
+    font-size: 10px; letter-spacing: 0.08em;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .fb-live { font-size: 9px; letter-spacing: 0.12em; white-space: nowrap; }
 }
 
 /* Short viewports: no room for the SCROLL hint between the content

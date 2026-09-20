@@ -104,7 +104,7 @@
   /* ───────── 2. Typing effect ───────── */
   const typedEl = document.getElementById("typed");
   if (typedEl) {
-    const words = ["in the zone.", "ahead of schedule.", "free from busywork.", "lightspeed."];
+    const words = ["searchable.", "auto-tagged.", "beautifully sorted.", "instantly findable."];
     let wi = 0, ci = 0, deleting = false;
 
     const tick = () => {
