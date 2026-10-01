@@ -79,3 +79,8 @@ searches), `semantic search`, `auto-tagging`, `similarity stacks`, `duplicate`, 
   `github.com/skkut/SilkStack-Image-Browser/issues/new` and nothing else, so there is no
   inbox to monitor and every answer stays searchable. Update the two issue links in the
   Support section of `index.html` if the repository moves.
+- **Privacy wording** — the anonymous usage ping is disclosed exactly once, as a small
+  footer line; keep it in step with the app README's "License, privacy & offline use"
+  section. Do not reintroduce absolute claims — the old "no telemetry" line was removed
+  from both the page copy and the `application/ld+json` block — and never document *how*
+  to block or disable the endpoint.

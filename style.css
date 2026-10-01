@@ -981,6 +981,7 @@ button { font-family: inherit; }
 }
 .footer-brand .brand { margin-bottom: 18px; }
 .footer-tag { color: var(--text-dim); font-size: 15px; font-weight: 300; max-width: 300px; }
+.footer-privacy { margin-top: 14px; color: var(--text-faint); font-size: 12.5px; line-height: 1.6; max-width: 300px; }
 .footer-copy { margin-top: 16px; color: var(--text-faint); font-size: 12.5px; }
 .footer-col { display: grid; gap: 12px; align-content: start; }
 .footer-col h4 {
