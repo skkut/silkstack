@@ -13,7 +13,7 @@ Deployed automatically to **https://skkut.github.io/silkstack** from the `main` 
 | Features    | 6 interactive 3D-tilt cards (real features from the README/docs) |
 | AI          | Semantic search / auto-tagging / similarity stacks cards, annotated AI screenshots, model + VRAM control, AI stats |
 | Showcase    | Real app screenshots in a terminal frame + screenshot strip |
-| Premium     | Community (free, MPL-2.0) vs Premium (one-time license)    |
+| Premium     | Community (free, MPL-2.0) vs Premium (monthly subscription with 7-day trial, or one-time lifetime license) |
 | Support     | Single call to action: open an issue on GitHub (no contact form) |
 
 ## Files
@@ -73,7 +73,7 @@ searches), `semantic search`, `auto-tagging`, `similarity stacks`, `duplicate`, 
 - **Screenshots** — `assets/` holds the current ones; regenerate them from `SilkStack-Image-Browser/docs/` when the app changes.
   The AI shots are copied from the app repo's `docs/*.jpg` (renamed to `ai-*.jpg`); keep the
   `width`/`height` attributes in `index.html` in step with the real pixel sizes.
-- **Premium license link** — the "Get a license" button points at the Gumroad purchase page (`silkstackbrowser.gumroad.com/l/images`). Update it in the Premium section of `index.html` if the storefront URL changes.
+- **Premium license link** — the three "Purchase license" / "Get a license" buttons point at the Gumroad storefront root (`silkstackbrowser.gumroad.com`), which lists both the monthly subscription (7-day free trial) and the lifetime license. Update them in `index.html` if the storefront URL changes; the direct product links are `silkstackbrowser.gumroad.com/l/gdkbhp` (subscription) and `silkstackbrowser.gumroad.com/l/images` (lifetime).
 - **Hero background** — a canvas particle network only (no video), so the page loads fast; tune its density in `script.js` (particle count formula in section 1).
 - **Support** — deliberately has no contact form and no FAQ: the section points at
   `github.com/skkut/SilkStack-Image-Browser/issues/new` and nothing else, so there is no
